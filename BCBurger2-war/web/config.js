@@ -12,7 +12,7 @@ var ausgabe = function(name, klasse) {
             if (klasse == "fleisch1") {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
@@ -26,7 +26,7 @@ var ausgabe = function(name, klasse) {
             if (klasse == "kaese1") {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
@@ -102,7 +102,7 @@ var ausgabe = function(name, klasse) {
             case "newbeef": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/newbeef.png";
                             document.getElementById("inputfleischbelag" + i).value = "Newbeef";
                             break;
@@ -114,7 +114,7 @@ var ausgabe = function(name, klasse) {
             case "chicken": {                       
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/chicken.png";
                             document.getElementById("inputfleischbelag" + i).value = "Chicken";
                             break;
@@ -126,7 +126,7 @@ var ausgabe = function(name, klasse) {
             case "veggie": {                       
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/veggie.png";
                             document.getElementById("inputfleischbelag" + i).value = "Veggie";
                             break;
@@ -138,7 +138,7 @@ var ausgabe = function(name, klasse) {
             case "cheese": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/cheese.png";
                             document.getElementById("inputkaesebelag" + i).value = "Cheese";
                             break;
@@ -150,7 +150,7 @@ var ausgabe = function(name, klasse) {
             case "cheddar": {                       
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/cheddar.png";
                             document.getElementById("inputkaesebelag" + i).value = "Cheddar";
                             break;
@@ -162,7 +162,7 @@ var ausgabe = function(name, klasse) {
             case "emmentaler": {                       
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/emmentaler.png";
                             document.getElementById("inputkaesebelag" + i).value = "Emmentaler";
                             break;
@@ -219,7 +219,7 @@ var ausgabe = function(name, klasse) {
             case "tomate": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/tomate.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Tomate";
                             break;
@@ -228,7 +228,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {                        
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/tomate.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/tomate.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -240,7 +240,7 @@ var ausgabe = function(name, klasse) {
             case "gurke": {                        
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/gurke.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Gurke";
                             break;
@@ -249,7 +249,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/gurke.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/gurke.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -261,7 +261,7 @@ var ausgabe = function(name, klasse) {
             case "essiggurkerl": {                        
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/essiggurkerl.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Essiggurkerl";
                             break;
@@ -270,7 +270,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/essiggurkerl.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/essiggurkerl.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -282,7 +282,7 @@ var ausgabe = function(name, klasse) {
             case "zwiebelrot": {                        
                 if (document.getElementsByName(klasse)[3].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/zwiebelrot.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Zwiebelrot";
                             break;
@@ -291,7 +291,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/zwiebelrot.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/zwiebelrot.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -303,7 +303,7 @@ var ausgabe = function(name, klasse) {
             case "rostzwiebel": {                        
                 if (document.getElementsByName(klasse)[4].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/rostzwiebel.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Rostzwiebel";
                             break;
@@ -312,7 +312,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/rostzwiebel.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/rostzwiebel.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -324,7 +324,7 @@ var ausgabe = function(name, klasse) {
             case "jalapenos": {                        
                 if (document.getElementsByName(klasse)[5].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/jalapenos.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Jalapenos";
                             break;
@@ -333,7 +333,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/jalapenos.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/jalapenos.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -345,7 +345,7 @@ var ausgabe = function(name, klasse) {
             case "bacon": {                        
                 if (document.getElementsByName(klasse)[6].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/bacon.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Bacon";
                             break;
@@ -354,7 +354,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Gemuese/bacon.png"){
+                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/bacon.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -366,7 +366,7 @@ var ausgabe = function(name, klasse) {
             case "ketchup": {                        
                 if (document.getElementsByName(klasse)[0].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/ketchup.png";
                             document.getElementById("inputsossebelag" + i).value = "Ketchup";
                             break;
@@ -380,7 +380,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Sosse/ketchup.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/ketchup.png"){
                             document.getElementById("sossebelag" + i).src = "img/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             break;
@@ -392,7 +392,7 @@ var ausgabe = function(name, klasse) {
             case "senf": {                        
                 if (document.getElementsByName(klasse)[1].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/senf.png";
                             document.getElementById("inputsossebelag" + i).value = "Senf";
                             break;
@@ -406,7 +406,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Sosse/senf.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/senf.png"){
                             document.getElementById("sossebelag" + i).src = "img/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             break;
@@ -418,7 +418,7 @@ var ausgabe = function(name, klasse) {
             case "sandwhischsauce": {                        
                 if (document.getElementsByName(klasse)[2].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/sandwhischsauce.png";
                             document.getElementById("inputsossebelag" + i).value = "Sandwischsauce";
                             break;
@@ -432,7 +432,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Sosse/sandwhischsauce.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/sandwhischsauce.png"){
                             document.getElementById("sossebelag" + i).src = "img/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             break;
@@ -444,7 +444,7 @@ var ausgabe = function(name, klasse) {
             case "bigmacsauce": {                        
                 if (document.getElementsByName(klasse)[3].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/bigmacsauce.png";
                             document.getElementById("inputsossebelag" + i).value = "Bigmacsauce";
                             break;
@@ -458,7 +458,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Sosse/bigmacsauce.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/bigmacsauce.png"){
                             document.getElementById("sossebelag" + i).src = "img/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             break;
@@ -470,7 +470,7 @@ var ausgabe = function(name, klasse) {
             case "gucamaole": {                        
                 if (document.getElementsByName(klasse)[4].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/gucamaole.png";
                             document.getElementById("inputsossebelag" + i).value = "Gucamaole";
                             break;
@@ -484,7 +484,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Sosse/gucamaole.png"){
+                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/gucamaole.png"){
                             document.getElementById("sossebelag" + i).src = "img/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             break;
@@ -502,7 +502,7 @@ var plus = function(name, klasse){
     if (klasse == "fleisch1") {
         var zaehlen = 0;
         for (var i=1; i<=3; i++) {                                
-            if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BC_Burger-war/img/leer.png"){
+            if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BCBurger2-war/img/leer.png"){
                 zaehlen = zaehlen + 1;
             }
         }
@@ -510,7 +510,7 @@ var plus = function(name, klasse){
     if (klasse == "kaese1") {
         var zaehlen = 0;
         for (var i=1; i<=3; i++) {                                
-            if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BC_Burger-war/img/leer.png"){
+            if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BCBurger2-war/img/leer.png"){
                 zaehlen = zaehlen + 1;
             }
         }
@@ -520,7 +520,7 @@ var plus = function(name, klasse){
             case "newbeef": { 
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -530,7 +530,7 @@ var plus = function(name, klasse){
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/newbeef.png";
                         document.getElementById("inputfleischbelag" + i).value = "Newbeef";
                         break;
@@ -542,7 +542,7 @@ var plus = function(name, klasse){
                     
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -552,7 +552,7 @@ var plus = function(name, klasse){
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/chicken.png";
                         document.getElementById("inputfleischbelag" + i).value = "Chicken";
                         break;
@@ -563,7 +563,7 @@ var plus = function(name, klasse){
             case "veggie": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -573,7 +573,7 @@ var plus = function(name, klasse){
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/veggie.png";
                         document.getElementById("inputfleischbelag" + i).value = "Veggie";
                         break;
@@ -584,7 +584,7 @@ var plus = function(name, klasse){
             case "cheese": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -594,7 +594,7 @@ var plus = function(name, klasse){
                 }    
                  
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/cheese.png";
                         document.getElementById("inputkaesebelag" + i).value = "Cheese";
                         break;
@@ -605,7 +605,7 @@ var plus = function(name, klasse){
             case "cheddar": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -615,7 +615,7 @@ var plus = function(name, klasse){
                 }     
                     
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/cheddar.png";
                         document.getElementById("inputkaesebelag" + i).value = "Cheddar";
                         break;
@@ -626,7 +626,7 @@ var plus = function(name, klasse){
             case "emmentaler": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
@@ -636,7 +636,7 @@ var plus = function(name, klasse){
                 }     
                     
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/emmentaler.png";
                         document.getElementById("inputkaesebelag" + i).value = "Emmentaler";
                         break;
@@ -662,13 +662,13 @@ var minus = function(name, klasse){
             case "newbeef": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         document.getElementById("fleischbelag" + i).src = "img/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         break;
@@ -683,12 +683,12 @@ var minus = function(name, klasse){
             case "chicken": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         document.getElementById("fleischbelag" + i).src = "img/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         break;
@@ -703,12 +703,12 @@ var minus = function(name, klasse){
             case "veggie": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         document.getElementById("fleischbelag" + i).src = "img/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         break;
@@ -727,13 +727,13 @@ var minus = function(name, klasse){
             case "cheese": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         document.getElementById("kaesebelag" + i).src = "img/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         break;
@@ -748,13 +748,13 @@ var minus = function(name, klasse){
             case "cheddar": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         document.getElementById("kaesebelag" + i).src = "img/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         break;
@@ -769,13 +769,13 @@ var minus = function(name, klasse){
             case "emmentaler": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BC_Burger-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         document.getElementById("kaesebelag" + i).src = "img/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         break;
