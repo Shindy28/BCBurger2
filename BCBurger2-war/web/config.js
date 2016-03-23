@@ -4,7 +4,7 @@
  * and open the template in the editor.
  * jonas beschde
  */
-/*aktuell*/
+/*aktuell2*/
 var ausgabe = function(name, klasse) {
         
         if (klasse == "fleisch1" || klasse == "kaese1"){
