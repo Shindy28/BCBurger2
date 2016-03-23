@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*aktuell*/
 var ausgabe = function(name, klasse) {
         
         if (klasse == "fleisch1" || klasse == "kaese1"){
