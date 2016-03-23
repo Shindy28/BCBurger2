@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23.03.2016, 13:06:56
+    Author     : Florian
+*/
+html {
+    font-family: Arial;
+    background-color: darkgrey;
+}
+
+.body {
+    width: 38%;
+    padding: 2%;
+    margin-left: 29%;
+    margin-right: 29%;
+    margin-top: 10%;
+    position: absolute;
+    border: solid;
+    border-color: black;
+    background-color: white;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+#ort {
+    font-size: 13px;
+}
+
+.mitte {
+    position: relative;
+    float: left;
+    margin-right: 7%;
+    margin-bottom: 5%;
+}
+
+#login_pop {
+    position: relative;
+    opacity: 1;
+    z-index: 200;
+}
+
+#register_pop {
+    display: none;
+    position: relative;
+    opacity: 0;
+}
+
+#register_pop:target {
+    display: block;
+    opacity: 1;
+    z-index: 200;
+}
+   
+#nna {
+    margin-top: 5%;
+}
+
+.sub {
+    margin-top: 10px;
+}
+
+.formular {
+    border: solid;
+    border-color: transparent;
+}
+
+.close {
+    float: right;
+    margin-top: -8%;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#ortfield1 {
+    display: none;
+}
+
+#ortfield2 {
+    display: none;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="start.css"/>
+        <link rel="stylesheet" href="bc.css" type="text/css">
+        <link rel="stylesheet" href="Style.css" type="text/css"/>
+
+
+        <title>Filialsuche</title>
+        
+    </head>
+    <body>
+        <div class="body">
+            <h1>Wo möchtest du bestellen?</h1>
+            <div class="mitte">
+                <h3>1. Filiale</h3>
+                <form action="login" method="post">
+                    <select id="ort" name="ort" size="5">
+                        <option value="Karlsruhe" selected>Karlsruhe</option>
+                        <option value="Heidelberg">Heidelberg</option>
+                        <option value="Stuttgart">Stuttgart</option>
+                        <option value="Mannheim">Mannheim</option>
+                        <option value="Mainz">Mainz</option>
+                    </select>
+                    <script language="javascript" type="text/javascript">
+                        var ort = document.getElementById('ort');
+                        ort.onchange = function() {
+                            var e = document.getElementById("ort");
+                            var strort = e.options[e.selectedIndex].value;
+                            document.getElementById("ortfield1").value = strort;
+                            ocument.getElementById("ortfield2").value = strort;
+                        }   
+                    </script>
+                </form>
+            </div>
+            <div class="mitte">
+                <div id="login_pop" class="overlay">
+                    <div>
+                        <h3>2. Login</h3>
+                        <div class="formular">
+                            <form action="login" method="post">
+                                <input id ="ortfield1" class="textfield" type="text" name="ort" value="Karlsruhe" />
+                                <input class="textfield" type="text" name="username" placeholder="Username" />
+                                <input class="textfield" type="password" name="password" placeholder="Password" />
+                                <div class="sub"><input type="submit" name="submit" value="Login"/></div>
+                            </form>
+                        </div>
+                        <div id="nna"><a href="#register_pop">Noch nicht angemeldet?</a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="register_pop" class="overlay">
+                <div id="reg">
+                    <h3>Registrieren</h3>
+                    <a class="close" href="#">×</a>
+                    <div class="formular">
+                        <form action="login" method="post">
+                            <input id ="ortfield2" class="textfield" type="text" name="ort" value="Karlsruhe" />
+                            <input class="textfield" type="text" name="username" placeholder="Username" />
+                            <input class="textfield" type="password" name="password" placeholder="Password" />
+                            <input class="textfield" type="password" name="passwordConfirm" placeholder="Confirm" />
+                            <div class="sub"><input type="submit" name="submit" value="Registrieren"/></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
