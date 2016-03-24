@@ -30,4 +30,6 @@ public interface ZutatenFacadeLocal {
 
     int count();
     
+    public int getZutatenIdByBez(String bezeichnung);
+    
 }

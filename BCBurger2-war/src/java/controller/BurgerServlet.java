@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,11 +20,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/save")
 public class BurgerServlet extends HttpServlet {
+    
+    @EJB
+    SaveBeanLocal SaveBean;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String param, belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18;
+        String param, belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username;
 
         param = request.getParameter("submit");
         belag1 = request.getParameter("Brotoben");
@@ -44,31 +48,9 @@ public class BurgerServlet extends HttpServlet {
         belag16 = request.getParameter("Fleischbelag1");
         belag17 = request.getParameter("Sossebelag1");
         belag18 = request.getParameter("Brotunten");
+        username = request.getParameter("username");
         
-        PrintWriter out = response.getWriter();
-        out.println("<script type=\"text/javascript\">");
-        out.print("alert('");
-        out.print(belag1 + ", ");
-        out.print(belag2 + ", ");
-        out.print(belag3 + ", ");
-        out.print(belag4 + ", ");
-        out.print(belag5 + ", ");
-        out.print(belag6 + ", ");
-        out.print(belag7 + ", ");
-        out.print(belag8 + ", ");
-        out.print(belag9 + ", ");
-        out.print(belag10 + ", ");
-        out.print(belag11 + ", ");
-        out.print(belag12 + ", ");
-        out.print(belag13 + ", ");
-        out.print(belag14 + ", ");
-        out.print(belag15 + ", ");
-        out.print(belag16 + ", ");
-        out.print(belag17 + ", ");
-        out.print(belag18);
-        out.println("');");
-        out.println("</script>");
-        out.println("location='Home.jsp';");  
+        SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username);  
         
     }
 }

@@ -97,6 +97,7 @@
                         <input type="submit" name="submit" value="Speichern"/>
                         <input type="submit" name="submit" value="Bestellen"/>
                     </div>
+                    <input type="hidden" name="username" value="<%= request.getAttribute("username") %>"/>
                 </form>
             </div>
         </div>
