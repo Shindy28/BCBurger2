@@ -44,9 +44,6 @@ public class Burger implements Serializable {
     private Double burgerPreis;
     @Column(name = "BURGERZUTATEN_ID")
     private Integer burgerzutatenId;
-    
-    @PersistenceContext(unitName = "masterclassEjbPersistence")
-    private EntityManager em;
  
     public Burger() {
     }
