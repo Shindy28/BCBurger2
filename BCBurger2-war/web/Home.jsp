@@ -93,6 +93,8 @@
                     <input id="inputfleischbelag1" type="hidden" name="Fleischbelag1" value="Newbeef"><img id="fleischbelag1" src="img/Fleisch/newbeef.png" alt="Newbeef"/></input>
                     <input id="inputsossebelag1" type="hidden" name="Sossebelag1" value="Ketchup"><img id="sossebelag1" src="img/Sosse/ketchup.png" alt="Ketchup"/></input>
                     <input id="inputBrotUnten" type="hidden" name="Brotunten" value="Briocheunten"><img id="brotunten" src="img/Brot/brioche_unten.png" alt="Briocheunten"/></input>
+                    <h4 id="burgerpreis">Preis: 4 €</h4>
+                    <input id="preis" type="hidden" value="4"/>
                     <div class="save">
                         <input type="submit" name="submit" value="Speichern"/>
                         <input type="submit" name="submit" value="Bestellen"/>
