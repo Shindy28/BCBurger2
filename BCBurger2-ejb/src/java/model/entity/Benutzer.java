@@ -55,8 +55,6 @@ public class Benutzer implements Serializable {
     private String benutzerPasswort;
     @Column(name = "BENUTZERBESTELLUNG_ID")
     private Integer benutzerbestellungId;
-    @Column(name = "BENUTZERBURGER_ID")
-    private Integer benutzerburgerId;
 
     public Benutzer() {
     }
@@ -125,14 +123,6 @@ public class Benutzer implements Serializable {
 
     public void setBenutzerbestellungId(Integer benutzerbestellungId) {
         this.benutzerbestellungId = benutzerbestellungId;
-    }
-
-    public Integer getBenutzerburgerId() {
-        return benutzerburgerId;
-    }
-
-    public void setBenutzerburgerId(Integer benutzerburgerId) {
-        this.benutzerburgerId = benutzerburgerId;
     }
 
     public Integer getBurgerId() {
