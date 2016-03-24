@@ -28,4 +28,12 @@ public class BurgerFacade extends AbstractFacade<Burger> implements BurgerFacade
         super(Burger.class);
     }
     
+    @Override
+     public int saveBurger(int bzid, double burgerPreis){
+         Burger current =  new Burger(bzid, burgerPreis);
+        this.create(current);
+        return current.getBurgerId();
+    
+}
+    
 }

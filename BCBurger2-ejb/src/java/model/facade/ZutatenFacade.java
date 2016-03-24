@@ -40,4 +40,15 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
       }
         return -1;
     }
+    
+    @Override
+    public double getZutatenPreisByBez(String bezeichnung) {
+      List<Zutaten> zut = this.findAll();
+      for(Zutaten current: zut){
+          if(current.getZutatenBezeichnung().equals(bezeichnung)){
+            return current.getZutatenPreis();
+           }
+      }
+        return 0;
+    }
 }

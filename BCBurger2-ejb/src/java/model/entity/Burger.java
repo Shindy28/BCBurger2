@@ -9,11 +9,13 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -42,12 +44,16 @@ public class Burger implements Serializable {
     private Double burgerPreis;
     @Column(name = "BURGERZUTATEN_ID")
     private Integer burgerzutatenId;
+    
+    @PersistenceContext(unitName = "masterclassEjbPersistence")
+    private EntityManager em;
  
     public Burger() {
     }
 
-    public Burger(Integer burgerzutatenId) {
+    public Burger(Integer burgerzutatenId, double burgerPreis) {
         this.burgerzutatenId = burgerzutatenId;
+        this.burgerPreis = burgerPreis;
     }
 
     public Integer getBurgerId() {

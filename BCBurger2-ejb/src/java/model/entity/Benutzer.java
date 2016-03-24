@@ -34,6 +34,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Benutzer.findByBenutzerPasswort", query = "SELECT b FROM Benutzer b WHERE b.benutzerPasswort = :benutzerPasswort")})
     
 public class Benutzer implements Serializable {
+    @Column(name = "BURGER_ID")
+    private Integer burgerId;
    
     private static final long serialVersionUID = 1L;
     @Id
@@ -131,6 +133,14 @@ public class Benutzer implements Serializable {
 
     public void setBenutzerburgerId(Integer benutzerburgerId) {
         this.benutzerburgerId = benutzerburgerId;
+    }
+
+    public Integer getBurgerId() {
+        return burgerId;
+    }
+
+    public void setBurgerId(Integer burgerId) {
+        this.burgerId = burgerId;
     }
     
 }

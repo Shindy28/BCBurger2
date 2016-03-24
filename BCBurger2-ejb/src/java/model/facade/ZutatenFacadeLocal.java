@@ -32,4 +32,6 @@ public interface ZutatenFacadeLocal {
     
     public int getZutatenIdByBez(String bezeichnung);
     
+     public double getZutatenPreisByBez(String bezeichnung);
+    
 }
