@@ -4,16 +4,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="Style.css" />
-        <script language="javascript" type="text/javascript" src="config.js"></script>   
+        <script language="javascript" type="text/javascript" src="config.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BC Burger</title>
     </head>
     <body>
         <header>
-            <div class="kopf"><img id="logo" src="img/BC_Burger_Logo.png" alt="Burgerbild"/></div>
-            <div class="kopf"><h1>BC Burger</h1></div>
-            <div class="kopf" id="kopf3"><h3>Kaiserallee 93<br><%= request.getAttribute("ort") %></h3></div>
-            <div class="kopf" id="kopf4"><h3>Hallo Burgerfreund<br><%= request.getAttribute("username") %></h3></div>
-            <div><img id="profil" src="img/Profil.png" alt=""/></div>
+            <div id="kopf1"><img id="logo" src="img/BC_Burger_Logo.png" alt="Burgerbild"/></div>
+            <div id="kopf2"><h1>BC Burger</h1></div>
+            <div id="kopf3"><h3>Kaiserallee 93<br><%= request.getAttribute("ort") %></h3></div>
+            <div id="kopf4"><h3>Hallo Burgerfreund<br><%= request.getAttribute("username") %></h3></div>
+            <div id="kopf5"><img id="profil" src="img/Profil.png" alt=""/></div>
         </header>
         <div id="zutaten">
             <h2>Brot</h2>
@@ -23,7 +24,7 @@
                 <label><input type="radio" class="radio" name="brot1" value="bigmac" onclick="ausgabe(value, name);"><img class="brot1" name="bigmac" src="img/Brot/bigmacbun.png" alt=""/></label>
                 <label><input type="radio" class="radio" name="brot1" value="dinkel" onclick="ausgabe(value, name);"><img class="brot1" name="dinkel" src="img/Brot/dinkel.png" alt=""/></label>
             </div>
-            <h2>Fleisch</h2>
+            <h2 class="uebers">Fleisch</h2>
             <hr align="left">
             <div id="fleisch">
                 <label><input type="checkbox" class="cbox" name="fleisch1" value="newbeef" onclick="ausgabe(value, name);" checked><img class="fleisch1" name="newbeef" id="start" src="img/Fleisch/cow.png" alt=""/></label>
@@ -33,7 +34,7 @@
                 <div class="plumin"><button class="minus" onclick="minus('chicken', 'fleisch1');">-</button><button class="plus" onclick="plus('chicken', 'fleisch1');">+</button></div>
                 <div class="plumin"><button class="minus" onclick="minus('veggie', 'fleisch1');">-</button><button class="plus" onclick="plus('veggie', 'fleisch1');">+</button></div>
             </div>
-            <h2>Käse</h2>
+            <h2 class="uebers">Käse</h2>
             <hr align="left">
             <div id="kaese">
                 <label><input type="checkbox" class="cbox" name="kaese1" value="cheese" onclick="ausgabe(value, name);" checked><img class="kaese1" name="cheese" id="start" src="img/Kaese/cheese.png" alt=""/></label>
@@ -43,14 +44,14 @@
                 <div class="plumin"><button class="minus" onclick="minus('cheddar', 'kaese1');">-</button><button class="plus" onclick="plus('cheddar', 'kaese1');">+</button></div>
                 <div class="plumin"><button class="minus" onclick="minus('emmentaler', 'kaese1');">-</button><button class="plus" onclick="plus('emmentaler', 'kaese1');">+</button></div>
             </div>
-            <h2>Salat</h2>
+            <h2 class="uebers">Salat</h2>
             <hr align="left">
             <div id="salat">
                 <label><input type="checkbox" class="cbox" name="salat1" value="salat" onclick="ausgabe(value, name);" checked><img class="salat1" name="salat" id="start" src="img/Salat/salat.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="salat1" value="salatbun" onclick="ausgabe(value, name);"><img class="salat1" name="salatbun" src="img/Salat/salatbun.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="salat1" value="rucula" onclick="ausgabe(value, name);"><img class="salat1" name="rucula" src="img/Salat/rucula.png" alt=""/></label>
             </div>
-            <h2>Gemüse</h2>
+            <h2 class="uebers">Gemüse</h2>
             <hr align="left">
             <div id="gemuese">
                 <label><input type="checkbox" class="cbox" name="gemuese1" value="tomate" onclick="ausgabe(value, name);" checked><img class="gemuese1" name="tomate" id="start" src="img/Gemuese/tomate.png" alt=""/></label>
@@ -61,7 +62,7 @@
                 <label><input type="checkbox" class="cbox" name="gemuese1" value="jalapenos" onclick="ausgabe(value, name);"><img class="gemuese1" name="jalapenos" src="img/Gemuese/jalapenos.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="gemuese1" value="bacon" onclick="ausgabe(value, name);"><img class="gemuese1" name="bacon" src="img/Gemuese/bacon.png" alt=""/></label>
             </div>
-            <h2>Soße</h2>
+            <h2 class="uebers">Soße</h2>
             <hr align="left">
             <div id="sosse">
                 <label><input type="checkbox" class="cbox" name="sosse1" value="ketchup" onclick="ausgabe(value, name);" checked><img class="sosse1" name="ketchup" id="start" src="img/Sosse/ketchup.png" alt=""/></label>

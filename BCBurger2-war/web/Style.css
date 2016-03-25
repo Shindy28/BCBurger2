@@ -12,29 +12,54 @@ and open the template in the editor.
 html {
     font-family: Arial;
     background-color: darkgrey;
+    
+    min-width: 1130px;
 }
 
 h1 {
     font-size: 60px;
 }
 
-.kopf {
+
+
+#kopf1 {
     position: relative;
     float: left;
-    margin-right: 50px;
+    width: 15%;
+}
+
+#kopf2 {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-width: 320px;
+    margin-left: 1%;
 }
 
 #kopf3 {
-    margin-left: 50px;
+    float: left;
     position: relative;
     top: 35px;
+    width: 12%;
+    min-width: 150px;
+    margin-left: 1%;
 }
 
 #kopf4{
+    float: left;
     font-size: 20px;
-    margin-left: 50px;
     position: relative;
     top: 25px;
+    width: 18%;
+    min-width: 230px;
+    margin-left: 1%;
+}
+
+#kopf5 {
+    position: relative;
+    float: right;
+    width: 15%;
+    margin-left: 1%;
 }
 
 #logo {
@@ -54,9 +79,10 @@ h1 {
 header {
     position: relative;
     background-color: white;
-    vertical-align: center;
+    vertical-align: middle;
     height: 150px;
     padding: 20px;
+    width: 97%;
 }
 
 #zutaten {
@@ -64,7 +90,7 @@ header {
     color: white;
     background-color: darkgrey;
     margin: 20px;
-    width: 75%;
+    width: 71%;
 }
 
 hr {
@@ -77,38 +103,43 @@ hr {
     padding: 20px;
     margin-top: 5px;
     background-color: white;
-    width: 18%;
+    width: 230px;
 }
 
 #brot img{
-    margin-right: 100px;
+    margin-right: 10%;
+    width: 20%;
 }
 
 #fleisch img{
-    margin-right: 100px;
+    margin-right: 10%;
+    width: 20%;
 }
 
 .plumin{
-    margin-right: 175px;
-    margin-left: 80px;
+    margin-right: 17.5%;
+    margin-left: 7.5%;
     float: left;
 }
 
 #kaese img{
-    margin-right: 100px;
+    margin-right: 10%;
+    width: 20%;
 }
 
 #salat img{
-    margin-right: 100px;
+    margin-right: 10%;
+    width: 20%;
 }
 
 #gemuese img{
-    margin-right: 100px;
-    /*margin-top: -80px;*/
+    margin-right: 10%;
+    width: 20%;
 }
 
-#sosse {
-    margin: 20px;
+#sosse img{
+    margin-right: 10%;
+    width: 20%;
 }
 
 /*.zwreihe {
@@ -163,7 +194,7 @@ hr {
 }
 
 
-.overlay {
-
+.uebers {
+    margin-top: 50px;
 }
 
