@@ -56,5 +56,13 @@ public class BenutzerFacade extends AbstractFacade<Benutzer> implements Benutzer
     public boolean checkPasswordByBenutzeId(int benutzerId, String passwort) {
         return this.find(benutzerId).getBenutzerPasswort().equals(passwort);
     }
+
+    @Override
+    public void saveBurgerBenutzer(int bid, int userID) {
+        Benutzer benu = this.find(userID);
+        benu.setBurgerId(bid);
+    }
+        
+    
     
 }

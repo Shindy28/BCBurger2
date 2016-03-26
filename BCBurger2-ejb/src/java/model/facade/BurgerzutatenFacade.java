@@ -8,7 +8,6 @@ package model.facade;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import model.entity.Benutzer;
 import model.entity.Burgerzutaten;
 
 /**

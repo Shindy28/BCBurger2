@@ -49,32 +49,17 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     int zID17 = zutatenFacade.getZutatenIdByBez(b17);
     int zID18 = zutatenFacade.getZutatenIdByBez(b18);
     
-    int userID = benutzerFacade.getBenutzerIdByBenutzerName(username);
+    username = username.toLowerCase();
+    int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
     
     int bzid = burgerzutatenFacade.save( zID1, zID2, zID3, zID4, zID5, zID6, zID7, zID8, zID9, zID10, zID11, zID12, zID13, zID14, zID15, zID16, zID17, zID18);
     
-   double burgerpreis = 0;
-  
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b1);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b2);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b3);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b4);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b5);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b6);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b7);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b8);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b9);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b10);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b11);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b12);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b13);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b14);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b15);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b16);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b17);
-   burgerpreis = burgerpreis + zutatenFacade.getZutatenPreisByBez(b18);
+    double burgerpreis = zutatenFacade.getBurgerPreis(b1, b2, b3, b4, b5, b6 , b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
 
-  int bid = burgerFacade.saveBurger(bzid, burgerpreis);
+    int bid = burgerFacade.saveBurger(bzid, burgerpreis);
+  
+     benutzerFacade.saveBurgerBenutzer(bid, userid);
+ 
     
 
 }

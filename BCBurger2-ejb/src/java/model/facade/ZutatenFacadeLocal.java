@@ -33,5 +33,7 @@ public interface ZutatenFacadeLocal {
     public int getZutatenIdByBez(String bezeichnung);
     
      public double getZutatenPreisByBez(String bezeichnung);
+
+    public double getBurgerPreis(String b1, String b2, String b3, String b4, String b5, String b6, String b60, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18);
     
 }
