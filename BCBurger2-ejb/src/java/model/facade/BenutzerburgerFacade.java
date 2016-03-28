@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package model.facade;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import model.entity.Benutzerburger;
+
+/**
+ *
+ * @author Florian
+ */
+@Stateless
+public class BenutzerburgerFacade extends AbstractFacade<Benutzerburger> implements BenutzerburgerFacadeLocal {
+
+    
+    
+    @PersistenceContext(unitName = "BCBurger2-ejbPU")
+    private EntityManager em;
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public BenutzerburgerFacade() {
+        super(Benutzerburger.class);
+    }
+    
+    /**
+     *
+     * @param bid
+     * @param userid
+     * @return 
+     */
+    @Override
+    public  void saveBenutzerBurger(int bid, int userid) {
+        Benutzerburger current =  new Benutzerburger(bid, userid);
+        this.create(current);
+    }
+
+}

@@ -8,6 +8,7 @@ package controller;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import model.facade.BenutzerFacadeLocal;
+import model.facade.BenutzerburgerFacadeLocal;
 import model.facade.BurgerFacadeLocal;
 import model.facade.BurgerzutatenFacadeLocal;
 import model.facade.ZutatenFacadeLocal;
@@ -26,6 +27,8 @@ BurgerFacadeLocal burgerFacade;
 BurgerzutatenFacadeLocal burgerzutatenFacade;
 @EJB
 ZutatenFacadeLocal zutatenFacade;
+@EJB
+BenutzerburgerFacadeLocal BenutzerburgerFacade;
 
 @Override
 public void performSave(String b1, String b2, String b3, String b4, String b5, String b6, String b7, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18, String username ){
@@ -57,10 +60,8 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     double burgerpreis = zutatenFacade.getBurgerPreis(b1, b2, b3, b4, b5, b6 , b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
 
     int bid = burgerFacade.saveBurger(bzid, burgerpreis);
-  
-     benutzerFacade.saveBurgerBenutzer(bid, userid);
- 
-    
+   
+    BenutzerburgerFacade.saveBenutzerBurger(bid, userid);
 
 }
 

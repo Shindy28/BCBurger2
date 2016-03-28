@@ -41,7 +41,5 @@ public interface BenutzerFacadeLocal {
     public boolean checkPasswordByBenutzeId(int benutzerId, String passwort);
 
     public boolean register(String benutzerName, String passwor);
-
-    public void saveBurgerBenutzer(int bid, int userID);
     
 }
