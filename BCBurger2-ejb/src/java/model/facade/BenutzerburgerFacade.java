@@ -5,6 +5,7 @@
  */
 package model.facade;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,6 +42,32 @@ public class BenutzerburgerFacade extends AbstractFacade<Benutzerburger> impleme
     public  void saveBenutzerBurger(int bid, int userid) {
         Benutzerburger current =  new Benutzerburger(bid, userid);
         this.create(current);
+    }
+    
+    @Override
+    public int[] getBurgerIdByBenutzerId(int userid){
+        int i = 0;
+        
+        List<Benutzerburger> bb1 = this.findAll();
+         for(Benutzerburger current: bb1){
+             if(current.getBenutzerId().equals(userid)){
+                 i++;
+             }
+         }
+
+        
+        int[] bidList = new int[i];
+         i = 0;
+        
+        List<Benutzerburger> bb2 = this.findAll();
+         for(Benutzerburger current: bb2){
+             if(current.getBenutzerId().equals(userid)){
+                bidList[i] = current.getBurgerId();
+                i++;
+             }
+         }
+         
+         return bidList;
     }
 
 }

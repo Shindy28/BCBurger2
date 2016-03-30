@@ -36,5 +36,7 @@ public interface BenutzerburgerFacadeLocal {
      * @param userid
      */
     public void saveBenutzerBurger(int bid, int userid);
+
+    public int[] getBurgerIdByBenutzerId(int userid);
     
 }

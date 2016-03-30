@@ -99,4 +99,20 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
    return burgerpreis;
    
     }
+    
+    /**
+     *
+     * @param zid
+     * @return
+     */
+    @Override
+  public String getBezByZutatenId(int zid){
+      List<Zutaten> zut = this.findAll();
+      for(Zutaten current: zut){
+          if(current.getZutatenId().equals(zid)){
+          return current.getZutatenBezeichnung();
+          }
+      }
+     return "leer"; 
+  }
 }

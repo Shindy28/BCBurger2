@@ -5,6 +5,7 @@
  */
 package model.facade;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,6 +20,10 @@ public class BurgerzutatenFacade extends AbstractFacade<Burgerzutaten> implement
     @PersistenceContext(unitName = "BCBurger2-ejbPU")
     private EntityManager em;
 
+    /**
+     *
+     * @return
+     */
     @Override
     protected EntityManager getEntityManager() {
         return em;
@@ -34,5 +39,9 @@ public class BurgerzutatenFacade extends AbstractFacade<Burgerzutaten> implement
     public BurgerzutatenFacade() {
         super(Burgerzutaten.class);
     }
+        
+   
+
+    
     
 }

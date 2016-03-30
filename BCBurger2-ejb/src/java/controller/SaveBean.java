@@ -5,8 +5,12 @@
  */
 package controller;
 
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import model.entity.Benutzerburger;
+import model.entity.Burger;
+import model.entity.Burgerzutaten;
 import model.facade.BenutzerFacadeLocal;
 import model.facade.BenutzerburgerFacadeLocal;
 import model.facade.BurgerFacadeLocal;
@@ -65,5 +69,64 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
 
 }
 
+    @Override
+    public String[][] getSaveBurger(String username){
+         
+        int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
+        System.out.println(username);
+        int[] bidList = BenutzerburgerFacade.getBurgerIdByBenutzerId(userid);
+        String [][] saveburger = new String[bidList.length][ ];
+        
+        Burgerzutaten bz;
+        Burger burger;
+         
+         for(int i=0; i< bidList.length; i++){
+            burger = burgerFacade.find(bidList[i]);
+            bz = burgerzutatenFacade.find(burger.getBurgerzutatenId());
+                
+            saveburger[i][0] = zutatenFacade.getBezByZutatenId(bz.getZid1());
+            saveburger[i][1] = zutatenFacade.getBezByZutatenId(bz.getZid2());
+            saveburger[i][2] = zutatenFacade.getBezByZutatenId(bz.getZid3());
+            saveburger[i][3] = zutatenFacade.getBezByZutatenId(bz.getZid4());
+            saveburger[i][4] = zutatenFacade.getBezByZutatenId(bz.getZid5());
+            saveburger[i][5] = zutatenFacade.getBezByZutatenId(bz.getZid6());
+            saveburger[i][6] = zutatenFacade.getBezByZutatenId(bz.getZid7());
+            saveburger[i][7] = zutatenFacade.getBezByZutatenId(bz.getZid8());
+            saveburger[i][8] = zutatenFacade.getBezByZutatenId(bz.getZid9());
+            saveburger[i][9] = zutatenFacade.getBezByZutatenId(bz.getZid10());
+            saveburger[i][10] = zutatenFacade.getBezByZutatenId(bz.getZid11());
+            saveburger[i][11] = zutatenFacade.getBezByZutatenId(bz.getZid12());
+            saveburger[i][12] = zutatenFacade.getBezByZutatenId(bz.getZid13());
+            saveburger[i][13] = zutatenFacade.getBezByZutatenId(bz.getZid14());
+            saveburger[i][14] = zutatenFacade.getBezByZutatenId(bz.getZid15());
+            saveburger[i][15] = zutatenFacade.getBezByZutatenId(bz.getZid16());
+            saveburger[i][16] = zutatenFacade.getBezByZutatenId(bz.getZid17());
+            saveburger[i][17] = zutatenFacade.getBezByZutatenId(bz.getZid18());
+            saveburger[i][18] = "" + burgerFacade.getPreisByBurgerId(bidList[i]) + "0€";
+            
+         }
+       return saveburger;
+    }
+    
+    @Override
+    public void deleteBurger(int bid){
+    
+      Burger bur = burgerFacade.find(bid);
+      int bzid = bur.getBurgerzutatenId();
+      Burgerzutaten bz = burgerzutatenFacade.find(bzid);
+     
+      burgerzutatenFacade.remove(bz);
+      burgerFacade.remove(bur);
+     
+      Benutzerburger bb = BenutzerburgerFacade.find(bid);
+      BenutzerburgerFacade.remove(bb);
+    }
+    
+    /*@Override
+    public void orderBurger(int bid){
+        
+    }*/
+
+ 
 
 }

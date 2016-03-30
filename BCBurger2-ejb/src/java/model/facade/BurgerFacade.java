@@ -5,6 +5,7 @@
  */
 package model.facade;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -33,7 +34,17 @@ public class BurgerFacade extends AbstractFacade<Burger> implements BurgerFacade
          Burger current =  new Burger(bzid, burgerPreis);
         this.create(current);
         return current.getBurgerId();
-    
-}
+    }
+     
+    /**
+     *
+     * @param burgerid
+     * @return
+     */
+    @Override
+    public double getPreisByBurgerId(int burgerid){
+      Burger bur = this.find(burgerid);
+      return bur.getBurgerPreis();
+    }
     
 }

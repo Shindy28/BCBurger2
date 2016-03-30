@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Burgerzutaten.findByBurgerzutatenId", query = "SELECT b FROM Burgerzutaten b WHERE b.burgerzutatenId = :burgerzutatenId")})
         
 public class Burgerzutaten implements Serializable {
+
     @Column(name = "ZID1")
     private Integer zid1;
     @Column(name = "ZID2")

@@ -28,29 +28,36 @@ public class BurgerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String param, belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username;
-
+        
         param = request.getParameter("submit");
-        belag1 = request.getParameter("Brotoben");
-        belag2 = request.getParameter("Sossebelag2");
-        belag3 = request.getParameter("Gemuesebelag7");
-        belag4 = request.getParameter("Gemuesebelag6");
-        belag5 = request.getParameter("Gemuesebelag5");
-        belag6 = request.getParameter("Gemuesebelag4");
-        belag7 = request.getParameter("Gemuesebelag3");
-        belag8 = request.getParameter("Gemuesebelag2");
-        belag9 = request.getParameter("Gemuesebelag1");
-        belag10 = request.getParameter("Salatbelag");
-        belag11 = request.getParameter("Kaesebelag3");
-        belag12 = request.getParameter("Kaesebelag2");
-        belag13 = request.getParameter("Kaesebelag1");
-        belag14 = request.getParameter("Fleischbelag3");
-        belag15 = request.getParameter("Fleischbelag2");
-        belag16 = request.getParameter("Fleischbelag1");
-        belag17 = request.getParameter("Sossebelag1");
-        belag18 = request.getParameter("Brotunten");
         username = request.getParameter("username");
         
-        SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username);  
+        if(param.equals("Speichern")){
+
+            belag1 = request.getParameter("Brotoben");
+            belag2 = request.getParameter("Sossebelag2");
+            belag3 = request.getParameter("Gemuesebelag7");
+            belag4 = request.getParameter("Gemuesebelag6");
+            belag5 = request.getParameter("Gemuesebelag5");
+            belag6 = request.getParameter("Gemuesebelag4");
+            belag7 = request.getParameter("Gemuesebelag3");
+            belag8 = request.getParameter("Gemuesebelag2");
+            belag9 = request.getParameter("Gemuesebelag1");
+            belag10 = request.getParameter("Salatbelag");
+            belag11 = request.getParameter("Kaesebelag3");
+            belag12 = request.getParameter("Kaesebelag2");
+            belag13 = request.getParameter("Kaesebelag1");
+            belag14 = request.getParameter("Fleischbelag3");
+            belag15 = request.getParameter("Fleischbelag2");
+            belag16 = request.getParameter("Fleischbelag1");
+            belag17 = request.getParameter("Sossebelag1");
+            belag18 = request.getParameter("Brotunten");
+           
+   
+            SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username);  
+            request.getRequestDispatcher("/Save.jsp").forward(request, response);
         
+        }
+    
     }
 }

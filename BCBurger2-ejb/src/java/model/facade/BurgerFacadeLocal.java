@@ -31,5 +31,7 @@ public interface BurgerFacadeLocal {
     int count();
     
     public int saveBurger(int bzid, double burgerPreis);
+
+    public double getPreisByBurgerId(int burgerid);
     
 }
