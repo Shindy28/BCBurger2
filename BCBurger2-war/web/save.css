@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30.03.2016, 17:54:32
+    Author     : DanielRohleder
+*/
+.burger {
+    float: left;
+    width: 30%;
+}
+
+.brotoben {
+    position: relative;
+}
+
+.sosse {
+    position: relative;
+    margin-top: -180px;
+}
+
+.gemuese {
+    position: relative;
+    margin-top: -180px;
+}
+
+.salat {
+    position: relative;
+    margin-top: -180px;
+}
+
+.kaese {
+    position: relative;
+    margin-top: -180px;
+}
+
+.fleisch {
+    position: relative;
+    margin-top: -180px;
+}
+
+.brotunten {
+    position: relative;
+    margin-top: -180px;
+}

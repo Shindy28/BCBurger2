@@ -75,7 +75,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
         int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
         System.out.println(username);
         int[] bidList = BenutzerburgerFacade.getBurgerIdByBenutzerId(userid);
-        String [][] saveburger = new String[bidList.length][ ];
+        String [][] saveburger = new String[bidList.length][19];
         
         Burgerzutaten bz;
         Burger burger;

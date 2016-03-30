@@ -55,6 +55,9 @@ public class BurgerServlet extends HttpServlet {
            
    
             SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username);  
+            String[][] burgerArray = SaveBean.getSaveBurger(username.toLowerCase());
+            request.setAttribute("burgerArray", burgerArray);
+            request.setAttribute("username", username);
             request.getRequestDispatcher("/Save.jsp").forward(request, response);
         
         }

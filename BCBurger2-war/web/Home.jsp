@@ -76,24 +76,24 @@
             <h3>Dein Burger:</h3>
             <div>
                 <form action="save" method="post">
-                    <input id="inputBrotOben" type="hidden" name="Brotoben" value="Briocheoben"><img id="brotoben" src="img/Brot/brioche_oben.png"/></input>
-                    <input id="inputsossebelag2" type="hidden" name="Sossebelag2" value="Leer"><img id="sossebelag2" src="img/leer.png" alt=""/></input>
-                    <input id="inputgemuesebelag7" type="hidden" name="Gemuesebelag7" value="Leer"><img id="gemuesebelag7" src="img/leer.png" alt=""/></input>
-                    <input id="inputgemuesebelag6" type="hidden" name="Gemuesebelag6" value="Leer"><img id="gemuesebelag6" src="img/leer.png" alt=""/></input>
-                    <input id="inputgemuesebelag5" type="hidden" name="Gemuesebelag5" value="Leer"><img id="gemuesebelag5" src="img/leer.png" alt=""/></input>
-                    <input id="inputgemuesebelag4" type="hidden" name="Gemuesebelag4" value="Leer"><img id="gemuesebelag4" src="img/leer.png" alt=""/></input>
-                    <input id="inputgemuesebelag3" type="hidden" name="Gemuesebelag3" value="Leer"><img id="gemuesebelag3" src="img/leer.png" alt=""/></input>
+                    <input id="inputBrotOben" type="hidden" name="Brotoben" value="Briocheoben"><img id="brotoben" src="img/Brot/briocheoben.png"/></input>
+                    <input id="inputsossebelag2" type="hidden" name="Sossebelag2" value="Leer"><img id="sossebelag2" src="img/Sosse/leer.png" alt=""/></input>
+                    <input id="inputgemuesebelag7" type="hidden" name="Gemuesebelag7" value="Leer"><img id="gemuesebelag7" src="img/Gemuese/leer.png" alt=""/></input>
+                    <input id="inputgemuesebelag6" type="hidden" name="Gemuesebelag6" value="Leer"><img id="gemuesebelag6" src="img/Gemuese/leer.png" alt=""/></input>
+                    <input id="inputgemuesebelag5" type="hidden" name="Gemuesebelag5" value="Leer"><img id="gemuesebelag5" src="img/Gemuese/leer.png" alt=""/></input>
+                    <input id="inputgemuesebelag4" type="hidden" name="Gemuesebelag4" value="Leer"><img id="gemuesebelag4" src="img/Gemuese/leer.png" alt=""/></input>
+                    <input id="inputgemuesebelag3" type="hidden" name="Gemuesebelag3" value="Leer"><img id="gemuesebelag3" src="img/Gemuese/leer.png" alt=""/></input>
                     <input id="inputgemuesebelag2" type="hidden" name="Gemuesebelag2" value="Tomate"><img id="gemuesebelag2" src="img/Gemuese/tomate.png" alt="Tomate"/></input>
                     <input id="inputgemuesebelag1" type="hidden" name="Gemuesebelag1" value="Gurke"><img id="gemuesebelag1" src="img/Gemuese/gurke.png" alt="Gurke"/></input>
                     <input id="inputsalatbelag" type="hidden" name="Salatbelag" value="Salat"><img id="salatbelag" src="img/Salat/salat.png" alt="Salat"/></input>
-                    <input id="inputkaesebelag3" type="hidden" name="Kaesebelag3" value="Leer"><img id="kaesebelag3" src="img/leer.png" alt=""/></input>
-                    <input id="inputkaesebelag2" type="hidden" name="Kaesebelag2" value="Leer"><img id="kaesebelag2" src="img/leer.png" alt=""/></input>
+                    <input id="inputkaesebelag3" type="hidden" name="Kaesebelag3" value="Leer"><img id="kaesebelag3" src="img/Kaese/leer.png" alt=""/></input>
+                    <input id="inputkaesebelag2" type="hidden" name="Kaesebelag2" value="Leer"><img id="kaesebelag2" src="img/Kaese/leer.png" alt=""/></input>
                     <input id="inputkaesebelag1" type="hidden" name="Kaesebelag1" value="Cheese"><img id="kaesebelag1" src="img/Kaese/cheese.png" alt="Cheese"/></input>
-                    <input id="inputfleischbelag3" type="hidden" name="Fleischbelag3" value="Leer"><img id="fleischbelag3" src="img/leer.png" alt=""/></input>
-                    <input id="inputfleischbelag2" type="hidden" name="Fleischbelag2" value="Leer"><img id="fleischbelag2" src="img/leer.png" alt=""/></input>
+                    <input id="inputfleischbelag3" type="hidden" name="Fleischbelag3" value="Leer"><img id="fleischbelag3" src="img/Fleisch/leer.png" alt=""/></input>
+                    <input id="inputfleischbelag2" type="hidden" name="Fleischbelag2" value="Leer"><img id="fleischbelag2" src="img/Fleisch/leer.png" alt=""/></input>
                     <input id="inputfleischbelag1" type="hidden" name="Fleischbelag1" value="Newbeef"><img id="fleischbelag1" src="img/Fleisch/newbeef.png" alt="Newbeef"/></input>
                     <input id="inputsossebelag1" type="hidden" name="Sossebelag1" value="Ketchup"><img id="sossebelag1" src="img/Sosse/ketchup.png" alt="Ketchup"/></input>
-                    <input id="inputBrotUnten" type="hidden" name="Brotunten" value="Briocheunten"><img id="brotunten" src="img/Brot/brioche_unten.png" alt="Briocheunten"/></input>
+                    <input id="inputBrotUnten" type="hidden" name="Brotunten" value="Briocheunten"><img id="brotunten" src="img/Brot/briocheunten.png" alt="Briocheunten"/></input>
                     <h4 id="burgerpreis">Preis: 4 €</h4>
                     <input id="preis" type="hidden" value="4"/>
                     <div class="save">
@@ -103,6 +103,6 @@
                     <input type="hidden" name="username" value="<%= request.getAttribute("username") %>"/>
                 </form>
             </div>
-        </div>
+        </div>       
     </body>
 </html>
