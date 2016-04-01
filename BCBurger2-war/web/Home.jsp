@@ -10,10 +10,10 @@
     </head>
     <body>
         <header>
-            <div id="kopf1"><img id="logo" src="img/BC_Burger_Logo.png" alt="Burgerbild"/></div>
+            <div id="kopf1"><img id="logo" src="img/BC_Burger_Logo2.png" alt="Burgerbild"/></div>
             <div id="kopf2"><h1>BC Burger</h1></div>
             <div id="kopf3"><h3>Kaiserallee 93<br><%= request.getAttribute("ort") %></h3></div>
-            <div id="kopf4"><h3>Hallo Burgerfreund<br><%= request.getAttribute("username") %></h3></div>
+            <div id="kopf4"><h3>Hallo Burgerfreund<br><%= request.getParameter("username") %></h3></div>
             <div id="kopf5"><img id="profil" src="img/Profil.png" alt=""/></div>
         </header>
         <div id="zutaten">
@@ -67,7 +67,7 @@
             <div id="sosse">
                 <label><input type="checkbox" class="cbox" name="sosse1" value="ketchup" onclick="ausgabe(value, name);" checked><img class="sosse1" name="ketchup" id="start" src="img/Sosse/ketchup.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="sosse1" value="senf" onclick="ausgabe(value, name);"><img class="sosse1" name="senf" src="img/Sosse/senf.png" alt=""/></label>
-                <label><input type="checkbox" class="cbox" name="sosse1" value="sandwhischsauce" onclick="ausgabe(value, name);"><img class="sosse1" name="sandwhischsauce" src="img/Sosse/sandwhischsauce.png" alt=""/></label>
+                <label><input type="checkbox" class="cbox" name="sosse1" value="sandwischsauce" onclick="ausgabe(value, name);"><img class="sosse1" name="sandwischsauce" src="img/Sosse/sandwischsauce.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="sosse1" value="bigmacsauce" onclick="ausgabe(value, name);"><img class="sosse1" name="bigmacsauce" src="img/Sosse/bigmacsauce.png" alt=""/></label>
                 <label><input type="checkbox" class="cbox" name="sosse1" value="gucamaole" onclick="ausgabe(value, name);"><img class="sosse1" name="gucamaole" src="img/Sosse/gucamaole.png" alt=""/></label>
             </div>
@@ -94,15 +94,29 @@
                     <input id="inputfleischbelag1" type="hidden" name="Fleischbelag1" value="Newbeef"><img id="fleischbelag1" src="img/Fleisch/newbeef.png" alt="Newbeef"/></input>
                     <input id="inputsossebelag1" type="hidden" name="Sossebelag1" value="Ketchup"><img id="sossebelag1" src="img/Sosse/ketchup.png" alt="Ketchup"/></input>
                     <input id="inputBrotUnten" type="hidden" name="Brotunten" value="Briocheunten"><img id="brotunten" src="img/Brot/briocheunten.png" alt="Briocheunten"/></input>
-                    <h4 id="burgerpreis">Preis: 4 €</h4>
+                    <h4 id="burgerpreis">Preis: 4.00 €</h4>
                     <input id="preis" type="hidden" value="4"/>
                     <div class="save">
-                        <input type="submit" name="submit" value="Speichern"/>
-                        <input type="submit" name="submit" value="Bestellen"/>
+                        <input class="textfield" type="text" name="Burgername" placeholder="Burgername" />
+                        <input class="button" type="submit" name="submit" value="Speichern"/>
+                        <input class="button" type="submit" name="submit" value="Bestellen"/>
                     </div>
-                    <input type="hidden" name="username" value="<%= request.getAttribute("username") %>"/>
+                    <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/>
                 </form>
-            </div>
-        </div>       
+            </div>   
+        </div>  
+        <script language="javascript" type="text/javascript">
+            document.onscroll = function () { 
+                var pos = window.pageYOffset; 
+                if (pos > 200) {
+                    document.getElementById('burger').style.position = "fixed";
+                    document.getElementById('burger').style.top = '0px'; 
+                }
+                else {
+                    document.getElementById('burger').style.position = "absolute";
+                    document.getElementById('burger').style.top = '200px'; 
+                } 
+            } 
+        </script>
     </body>
 </html>

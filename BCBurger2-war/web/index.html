@@ -9,8 +9,6 @@ and open the template in the editor.
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="start.css"/>
-        <link rel="stylesheet" href="bc.css" type="text/css">
-        <link rel="stylesheet" href="Style.css" type="text/css"/>
 
 
         <title>Filialsuche</title>
@@ -18,16 +16,17 @@ and open the template in the editor.
     </head>
     <body>
         <div class="body">
-            <h1>Wo möchtest du bestellen?</h1>
+            <img id="logo" src="img/BC_Burger_Logo_white2.png"/>
+            <h1>Los gehts!</h1>
             <div class="mitte">
                 <h3>1. Filiale</h3>
                 <form action="login" method="post">
                     <select id="ort" name="ort" size="5">
-                        <option value="Karlsruhe" selected>Karlsruhe</option>
-                        <option value="Heidelberg">Heidelberg</option>
-                        <option value="Stuttgart">Stuttgart</option>
-                        <option value="Mannheim">Mannheim</option>
-                        <option value="Mainz">Mainz</option>
+                        <option class="opt" value="Karlsruhe" selected>Karlsruhe</option>
+                        <option class="opt" value="Heidelberg">Heidelberg</option>
+                        <option class="opt" value="Stuttgart">Stuttgart</option>
+                        <option class="opt" value="Mannheim">Mannheim</option>
+                        <option class="opt" value="Mainz">Mainz</option>
                     </select>
                     <script language="javascript" type="text/javascript">
                         var ort = document.getElementById('ort');
@@ -49,7 +48,7 @@ and open the template in the editor.
                                 <input id ="ortfield1" class="textfield" type="text" name="ort" value="Karlsruhe" />
                                 <input class="textfield" type="text" name="username" placeholder="Username" />
                                 <input class="textfield" type="password" name="password" placeholder="Password" />
-                                <div class="sub"><input type="submit" name="submit" value="Login"/></div>
+                                <div class="sub"><input class="button" type="submit" name="submit" value="Login"/></div>
                             </form>
                         </div>
                         <div id="nna"><a href="#register_pop">Noch nicht angemeldet?</a></div>
@@ -66,7 +65,7 @@ and open the template in the editor.
                             <input class="textfield" type="text" name="username" placeholder="Username" />
                             <input class="textfield" type="password" name="password" placeholder="Password" />
                             <input class="textfield" type="password" name="passwordConfirm" placeholder="Confirm" />
-                            <div class="sub"><input type="submit" name="submit" value="Registrieren"/></div>
+                            <div class="sub"><input class="button" type="submit" name="submit" value="Registrieren"/></div>
                         </form>
                     </div>
                 </div>

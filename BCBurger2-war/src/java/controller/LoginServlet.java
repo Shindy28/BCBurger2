@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
         else {
             request.setAttribute("username", username);
             request.setAttribute("ort", ort);
-            request.getRequestDispatcher("/Home.jsp").forward(request, response);
+            request.getRequestDispatcher("/Home.jsp?username="+username).forward(request, response);
         }           
     }
 }

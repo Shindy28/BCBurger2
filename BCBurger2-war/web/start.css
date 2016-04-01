@@ -9,19 +9,32 @@ and open the template in the editor.
 */
 html {
     font-family: Arial;
-    background-color: darkgrey;
+    color: white;
+    background-image: url(img/grill2.jpg);
+}
+
+#logo {
+    width: 150px;
+    float: left;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
 }
 
 .body {
-    width: 38%;
+    width: 500px;
     padding: 2%;
     margin-left: 29%;
     margin-right: 29%;
     margin-top: 10%;
     position: absolute;
-    border: solid;
-    border-color: black;
-    background-color: white;
+    //border: solid;
+    //border-color: black;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
 }
 
 h3 {
@@ -74,7 +87,6 @@ h3 {
     float: right;
     margin-top: -8%;
     font-size: 25px;
-    text-decoration: none;
 }
 
 #ortfield1 {
@@ -83,4 +95,22 @@ h3 {
 
 #ortfield2 {
     display: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button{
+    background-color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.button:active{
+    background-color: rgb(255,75,0);
 }

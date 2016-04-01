@@ -11,8 +11,10 @@ and open the template in the editor.
 
 html {
     font-family: Arial;
-    background-color: darkgrey;
-    
+    //background-color: darkgrey;
+    background-image: url(img/grill2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-width: 1130px;
 }
 
@@ -86,10 +88,12 @@ header {
 }
 
 #zutaten {
+    padding: 10px;
     float: left;
     color: white;
-    background-color: darkgrey;
-    margin: 20px;
+    background-color: rgba(0,0,0,0.6);
+    //opacity: 0.6;
+    margin-top: 20px;
     width: 71%;
 }
 
@@ -99,10 +103,13 @@ hr {
 }
 
 #burger {
-    float: right;
+    position: absolute;
+    right: 5px;
+    top: 200px;
+    //float: right;
     padding: 20px;
-    margin-top: 5px;
-    background-color: white;
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.9);
     width: 230px;
 }
 
@@ -198,3 +205,28 @@ hr {
     margin-top: 50px;
 }
 
+button.plus, button.minus{
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    width: 20px;
+    margin: 5px;
+}
+
+button.plus:active, button.minus:active{
+    background-color: rgb(255,75,0);
+}
+
+input.button{
+    background-color: white;
+    border: none;
+    border-radius: 0;
+}
+
+input.button:active{
+    background-color: rgb(255,75,0);
+}
+
+h4 {
+    margin-top: -50px;
+}
