@@ -69,5 +69,19 @@ public class BenutzerburgerFacade extends AbstractFacade<Benutzerburger> impleme
          
          return bidList;
     }
+    
+    @Override
+    public int getBenutzerburgerIdByBurgerId(int bid){
+        int bbid = 0;
+        List<Benutzerburger> bb3 = this.findAll();
+        for(Benutzerburger current: bb3){
+            if(current.getBurgerId().equals(bid)){
+                bbid = current.getBenutzerburgerId();
+                break;
+            }
+        }
+         
+        return bbid;
+    }
 
 }

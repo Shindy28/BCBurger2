@@ -75,7 +75,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
         int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
         System.out.println(username);
         int[] bidList = BenutzerburgerFacade.getBurgerIdByBenutzerId(userid);
-        String [][] saveburger = new String[bidList.length][19];
+        String [][] saveburger = new String[bidList.length][20];
         
         Burgerzutaten bz;
         Burger burger;
@@ -103,6 +103,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
             saveburger[i][16] = zutatenFacade.getBezByZutatenId(bz.getZid17());
             saveburger[i][17] = zutatenFacade.getBezByZutatenId(bz.getZid18());
             saveburger[i][18] = "" + burgerFacade.getPreisByBurgerId(bidList[i]) + "0€";
+            saveburger[i][19] = "" + bidList[i];
             
          }
        return saveburger;
@@ -114,11 +115,11 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
       Burger bur = burgerFacade.find(bid);
       int bzid = bur.getBurgerzutatenId();
       Burgerzutaten bz = burgerzutatenFacade.find(bzid);
+      int bbid = BenutzerburgerFacade.getBenutzerburgerIdByBurgerId(bid);
+      Benutzerburger bb = BenutzerburgerFacade.find(bbid);
      
       burgerzutatenFacade.remove(bz);
       burgerFacade.remove(bur);
-     
-      Benutzerburger bb = BenutzerburgerFacade.find(bid);
       BenutzerburgerFacade.remove(bb);
     }
     

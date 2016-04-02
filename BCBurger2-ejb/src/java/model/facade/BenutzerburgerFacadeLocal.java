@@ -39,4 +39,6 @@ public interface BenutzerburgerFacadeLocal {
 
     public int[] getBurgerIdByBenutzerId(int userid);
     
+    public int getBenutzerburgerIdByBurgerId(int bid);
+    
 }

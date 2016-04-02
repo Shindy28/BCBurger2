@@ -31,6 +31,8 @@ public class BurgerServlet extends HttpServlet {
         
         param = request.getParameter("submit");
         username = request.getParameter("username");
+        String bidstr = request.getParameter("bid");
+        //int bid = Integer.parseInt(bidstr);
         
         if(param.equals("Speichern")){
 
@@ -58,9 +60,21 @@ public class BurgerServlet extends HttpServlet {
             String[][] burgerArray = SaveBean.getSaveBurger(username.toLowerCase());
             request.setAttribute("burgerArray", burgerArray);
             request.setAttribute("username", username);
-            request.getRequestDispatcher("/Save.jsp").forward(request, response);
+            request.getRequestDispatcher("/Save.jsp?username="+username).forward(request, response);
         
         }
-    
+        else if (param.equals("Loeschen")){
+            int bid = Integer.parseInt(bidstr);
+            SaveBean.deleteBurger(bid);
+            String[][] burgerArray = SaveBean.getSaveBurger(username.toLowerCase());
+            request.setAttribute("username", username);
+            if (burgerArray.length > 0){
+                request.setAttribute("burgerArray", burgerArray);
+                request.getRequestDispatcher("/Save.jsp?username="+username).forward(request, response);
+            } 
+            else {
+                request.getRequestDispatcher("/Home.jsp?username="+username).forward(request, response);
+            }
+        }
     }
 }
