@@ -9,12 +9,14 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import model.entity.Bestellung;
+import model.entity.Warenkorb;
 
 /**
  *
  * @author Florian
  */
 @Stateless
+
 public class BestellungFacade extends AbstractFacade<Bestellung> implements BestellungFacadeLocal {
     @PersistenceContext(unitName = "BCBurger2-ejbPU")
     private EntityManager em;

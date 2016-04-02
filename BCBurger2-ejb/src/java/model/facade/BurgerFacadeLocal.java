@@ -30,8 +30,12 @@ public interface BurgerFacadeLocal {
 
     int count();
     
-    public int saveBurger(int bzid, double burgerPreis);
+    public int saveBurger(int bzid, double burgerPreis, String burgerName, int benutzerId);
 
     public double getPreisByBurgerId(int burgerid);
+
+    public String getNameByBurgerId(int burgerid);
+
+    public int[] getBurgerIdByBenutzerId(int userid);
     
 }

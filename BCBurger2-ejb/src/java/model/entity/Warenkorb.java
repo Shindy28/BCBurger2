@@ -23,40 +23,43 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Florian
  */
 @Entity
-@Table(name = "BESTELLUNGBURGER")
+@Table(name = "WARENKORB")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Bestellungburger.findAll", query = "SELECT b FROM Bestellungburger b"),
-    @NamedQuery(name = "Bestellungburger.findByBestellungburgerId", query = "SELECT b FROM Bestellungburger b WHERE b.bestellungburgerId = :bestellungburgerId"),
-    @NamedQuery(name = "Bestellungburger.findByBurgerId", query = "SELECT b FROM Bestellungburger b WHERE b.burgerId = :burgerId"),
-    @NamedQuery(name = "Bestellungburger.findByMenge", query = "SELECT b FROM Bestellungburger b WHERE b.menge = :menge")})
-public class Bestellungburger implements Serializable {
+    @NamedQuery(name = "Warenkorb.findAll", query = "SELECT w FROM Warenkorb w"),
+    @NamedQuery(name = "Warenkorb.findByWarenkorbId", query = "SELECT w FROM Warenkorb w WHERE w.warenkorbId = :warenkorbId"),
+    @NamedQuery(name = "Warenkorb.findByBurgerId", query = "SELECT w FROM Warenkorb w WHERE w.burgerId = :burgerId"),
+    @NamedQuery(name = "Warenkorb.findByMenge", query = "SELECT w FROM Warenkorb w WHERE w.menge = :menge")})
+public class Warenkorb implements Serializable {
+    @Column(name = "BESTELLUNG_ID")
+    private Integer bestellungId;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @NotNull
-    @Column(name = "BESTELLUNGBURGER_ID")
-    private Integer bestellungburgerId;
+    @Column(name = "WARENKORB_ID")
+    private Integer warenkorbId;
     @Column(name = "BURGER_ID")
     private Integer burgerId;
     @Column(name = "MENGE")
     private Integer menge;
 
-    public Bestellungburger() {
-   
+    public Warenkorb() {
     }
-    
-    public Bestellungburger(Integer burgerId) {
+
+    public Warenkorb(int bestellungId,int burgerId, int menge ) {
         this.burgerId = burgerId;
+        this.bestellungId = bestellungId;
+        this.menge = menge;
     }
 
-    public Integer getBestellungburgerId() {
-        return bestellungburgerId;
+    public Integer getWarenkorbId() {
+        return warenkorbId;
     }
 
-    public void setBestellungburgerId(Integer bestellungburgerId) {
-        this.bestellungburgerId = bestellungburgerId;
+    public void setWarenkorbId(Integer warenkorbId) {
+        this.warenkorbId = warenkorbId;
     }
 
     public Integer getBurgerId() {
@@ -78,18 +81,18 @@ public class Bestellungburger implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (bestellungburgerId != null ? bestellungburgerId.hashCode() : 0);
+        hash += (warenkorbId != null ? warenkorbId.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Bestellungburger)) {
+        if (!(object instanceof Warenkorb)) {
             return false;
         }
-        Bestellungburger other = (Bestellungburger) object;
-        if ((this.bestellungburgerId == null && other.bestellungburgerId != null) || (this.bestellungburgerId != null && !this.bestellungburgerId.equals(other.bestellungburgerId))) {
+        Warenkorb other = (Warenkorb) object;
+        if ((this.warenkorbId == null && other.warenkorbId != null) || (this.warenkorbId != null && !this.warenkorbId.equals(other.warenkorbId))) {
             return false;
         }
         return true;
@@ -97,7 +100,15 @@ public class Bestellungburger implements Serializable {
 
     @Override
     public String toString() {
-        return "model.entity.Bestellungburger[ bestellungburgerId=" + bestellungburgerId + " ]";
+        return "model.entity.Warenkorb[ warenkorbId=" + warenkorbId + " ]";
+    }
+
+    public Integer getBestellungId() {
+        return bestellungId;
+    }
+
+    public void setBestellungId(Integer bestellungId) {
+        this.bestellungId = bestellungId;
     }
     
 }

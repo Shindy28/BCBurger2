@@ -5,17 +5,19 @@
  */
 package model.facade;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import model.entity.Bestellungburger;
+import model.entity.Burger;
+import model.entity.Warenkorb;
 
 /**
  *
  * @author Florian
  */
 @Stateless
-public class BestellungburgerFacade extends AbstractFacade<Bestellungburger> implements BestellungburgerFacadeLocal {
+public class WarenkorbFacade extends AbstractFacade<Warenkorb> implements WarenkorbFacadeLocal {
     @PersistenceContext(unitName = "BCBurger2-ejbPU")
     private EntityManager em;
 
@@ -24,8 +26,8 @@ public class BestellungburgerFacade extends AbstractFacade<Bestellungburger> imp
         return em;
     }
 
-    public BestellungburgerFacade() {
-        super(Bestellungburger.class);
+    public WarenkorbFacade() {
+        super(Warenkorb.class);
     }
     
 }

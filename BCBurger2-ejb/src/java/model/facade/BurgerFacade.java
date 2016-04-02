@@ -30,8 +30,8 @@ public class BurgerFacade extends AbstractFacade<Burger> implements BurgerFacade
     }
     
     @Override
-     public int saveBurger(int bzid, double burgerPreis){
-         Burger current =  new Burger(bzid, burgerPreis);
+     public int saveBurger(int bzid, double burgerPreis, String burgerName, int benutzerId){
+         Burger current =  new Burger(bzid, burgerPreis, burgerName, benutzerId);
         this.create(current);
         return current.getBurgerId();
     }
@@ -45,6 +45,38 @@ public class BurgerFacade extends AbstractFacade<Burger> implements BurgerFacade
     public double getPreisByBurgerId(int burgerid){
       Burger bur = this.find(burgerid);
       return bur.getBurgerPreis();
+    }
+
+    @Override
+    public String getNameByBurgerId(int burgerid) {
+      Burger bur = this.find(burgerid);
+      return bur.getBurgerName();
+    }
+
+    @Override
+    public int[] getBurgerIdByBenutzerId(int userid) {
+                int i = 0;
+        
+        List<Burger> b1 = this.findAll();
+         for(Burger current: b1){
+             if(current.getBenutzerId().equals(userid)){
+                 i++;
+             }
+         }
+
+        
+        int[] bidList = new int[i];
+         i = 0;
+        
+        List<Burger> b2 = this.findAll();
+         for(Burger current: b2){
+             if(current.getBenutzerId().equals(userid)){
+                bidList[i] = current.getBurgerId();
+                i++;
+             }
+         }
+         
+         return bidList;
     }
     
 }

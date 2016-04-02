@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Bestellung.findByBerstellungPreis", query = "SELECT b FROM Bestellung b WHERE b.berstellungPreis = :berstellungPreis"),
     @NamedQuery(name = "Bestellung.findByFilialenId", query = "SELECT b FROM Bestellung b WHERE b.filialenId = :filialenId")})
 public class Bestellung implements Serializable {
-  
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,28 +40,31 @@ public class Bestellung implements Serializable {
     @Column(name = "BESTELLUNG_ID")
     private Integer bestellungId;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
-    @Column(name = "BERSTELLUNG_PREIS")
-    private Double berstellungPreis;
+    @Column(name = "BESTELLUNG_PREIS")
+    private Double bestellungPreis;
     @Column(name = "FILIALEN_ID")
     private Integer filialenId;  
-    @Column(name = "BESTELLUNGBURGER_ID")
-    private Integer bestellungburgerId;
+    @Column(name = "BENUTZER_ID")
+    private Integer benutzerId;
 
-    public Bestellung(Integer filialenId, Integer bestellungburgerId ) {
-        this.filialenId = filialenId;
-        this.bestellungburgerId = bestellungburgerId;
+    public Bestellung( ) {
+  
+    }
+    
+    public Bestellung(int benutzerId){
+        this.benutzerId = benutzerId;
     }
 
     public Integer getBestellungId() {
         return bestellungId;
     }
 
-    public Double getBerstellungPreis() {
-        return berstellungPreis;
+    public Double getBestellungPreis() {
+        return bestellungPreis;
     }
 
-    public void setBerstellungPreis(Double berstellungPreis) {
-        this.berstellungPreis = berstellungPreis;
+    public void setBestellungPreis(Double berstellungPreis) {
+        this.bestellungPreis = berstellungPreis;
     }
 
     public Integer getFilialenId() {
@@ -97,15 +100,12 @@ public class Bestellung implements Serializable {
         return "model.Bestellung[ bestellungId=" + bestellungId + " ]";
     }
 
-    public Integer getBestellungburgerId() {
-        return bestellungburgerId;
+    public Integer getBenutzerId() {
+        return benutzerId;
     }
 
-    public void setBestellungburgerId(Integer bestellungburgerId) {
-        this.bestellungburgerId = bestellungburgerId;
-    }
-
-    public Bestellung() {
+    public void setBenutzerId(Integer benutzerId) {
+        this.benutzerId = benutzerId;
     }
     
 }

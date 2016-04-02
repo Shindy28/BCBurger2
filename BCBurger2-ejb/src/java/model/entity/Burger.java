@@ -18,6 +18,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -44,13 +45,20 @@ public class Burger implements Serializable {
     private Double burgerPreis;
     @Column(name = "BURGERZUTATEN_ID")
     private Integer burgerzutatenId;
- 
+    @Size(max = 50)
+    @Column(name = "BURGER_NAME")
+    private String burgerName;
+     @Column(name = "BENUTZER_ID")
+    private Integer benutzerId;
+     
     public Burger() {
     }
 
-    public Burger(Integer burgerzutatenId, double burgerPreis) {
+    public Burger(Integer burgerzutatenId, double burgerPreis, String burgerName, int benutzerId) {
         this.burgerzutatenId = burgerzutatenId;
         this.burgerPreis = burgerPreis;
+        this.burgerName = burgerName;
+        this.benutzerId = benutzerId;
     }
 
     public Integer getBurgerId() {
@@ -96,6 +104,22 @@ public class Burger implements Serializable {
 
     public void setBurgerzutatenId(Integer burgerzutatenId) {
         this.burgerzutatenId = burgerzutatenId;
+    }
+
+    public String getBurgerName() {
+        return burgerName;
+    }
+
+    public void setBurgerName(String burgerName) {
+        this.burgerName = burgerName;
+    }
+
+    public Integer getBenutzerId() {
+        return benutzerId;
+    }
+
+    public void setBenutzerId(Integer benutzerId) {
+        this.benutzerId = benutzerId;
     }
     
 }

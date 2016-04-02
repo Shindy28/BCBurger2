@@ -6,15 +6,18 @@
 package controller;
 
 
+import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import model.entity.Benutzerburger;
+import model.entity.Bestellung;
 import model.entity.Burger;
 import model.entity.Burgerzutaten;
+import model.entity.Warenkorb;
 import model.facade.BenutzerFacadeLocal;
-import model.facade.BenutzerburgerFacadeLocal;
+import model.facade.BestellungFacadeLocal;
 import model.facade.BurgerFacadeLocal;
 import model.facade.BurgerzutatenFacadeLocal;
+import model.facade.WarenkorbFacadeLocal;
 import model.facade.ZutatenFacadeLocal;
 
 /**
@@ -32,10 +35,13 @@ BurgerzutatenFacadeLocal burgerzutatenFacade;
 @EJB
 ZutatenFacadeLocal zutatenFacade;
 @EJB
-BenutzerburgerFacadeLocal BenutzerburgerFacade;
+WarenkorbFacadeLocal warenkorbFacade;
+@EJB
+BestellungFacadeLocal bestellungFacade;
+
 
 @Override
-public void performSave(String b1, String b2, String b3, String b4, String b5, String b6, String b7, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18, String username ){
+public void performSave(String b1, String b2, String b3, String b4, String b5, String b6, String b7, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18, String username, String burgername ){
     
     int zID1 = zutatenFacade.getZutatenIdByBez(b1);
     int zID2 = zutatenFacade.getZutatenIdByBez(b2);
@@ -63,19 +69,17 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     
     double burgerpreis = zutatenFacade.getBurgerPreis(b1, b2, b3, b4, b5, b6 , b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
 
-    int bid = burgerFacade.saveBurger(bzid, burgerpreis);
+    int bid = burgerFacade.saveBurger(bzid, burgerpreis, burgername, userid);
    
-    BenutzerburgerFacade.saveBenutzerBurger(bid, userid);
-
 }
 
     @Override
     public String[][] getSaveBurger(String username){
          
         int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
-        System.out.println(username);
-        int[] bidList = BenutzerburgerFacade.getBurgerIdByBenutzerId(userid);
-        String [][] saveburger = new String[bidList.length][20];
+        
+        int[] bidList = burgerFacade.getBurgerIdByBenutzerId(userid);
+        String [][] saveburger = new String[bidList.length][21];
         
         Burgerzutaten bz;
         Burger burger;
@@ -104,6 +108,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
             saveburger[i][17] = zutatenFacade.getBezByZutatenId(bz.getZid18());
             saveburger[i][18] = "" + burgerFacade.getPreisByBurgerId(bidList[i]) + "0€";
             saveburger[i][19] = "" + bidList[i];
+            saveburger[i][20] = "" + burgerFacade.getNameByBurgerId(bidList[i]);
             
          }
        return saveburger;
@@ -115,19 +120,93 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
       Burger bur = burgerFacade.find(bid);
       int bzid = bur.getBurgerzutatenId();
       Burgerzutaten bz = burgerzutatenFacade.find(bzid);
-      int bbid = BenutzerburgerFacade.getBenutzerburgerIdByBurgerId(bid);
-      Benutzerburger bb = BenutzerburgerFacade.find(bbid);
      
       burgerzutatenFacade.remove(bz);
       burgerFacade.remove(bur);
-      BenutzerburgerFacade.remove(bb);
+  
+    }
+    @Override
+    public void performOrder(String b1, String b2, String b3, String b4, String b5, String b6, String b7, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18, String username, String burgername){
+    
+    int zID1 = zutatenFacade.getZutatenIdByBez(b1);
+    int zID2 = zutatenFacade.getZutatenIdByBez(b2);
+    int zID3 = zutatenFacade.getZutatenIdByBez(b3);
+    int zID4 = zutatenFacade.getZutatenIdByBez(b4);
+    int zID5 = zutatenFacade.getZutatenIdByBez(b5);
+    int zID6 = zutatenFacade.getZutatenIdByBez(b6);
+    int zID7 = zutatenFacade.getZutatenIdByBez(b7);
+    int zID8 = zutatenFacade.getZutatenIdByBez(b8);
+    int zID9 = zutatenFacade.getZutatenIdByBez(b9);
+    int zID10 = zutatenFacade.getZutatenIdByBez(b10);
+    int zID11 = zutatenFacade.getZutatenIdByBez(b11);
+    int zID12 = zutatenFacade.getZutatenIdByBez(b12);
+    int zID13 = zutatenFacade.getZutatenIdByBez(b13);
+    int zID14 = zutatenFacade.getZutatenIdByBez(b14);
+    int zID15 = zutatenFacade.getZutatenIdByBez(b15);
+    int zID16 = zutatenFacade.getZutatenIdByBez(b16);
+    int zID17 = zutatenFacade.getZutatenIdByBez(b17);
+    int zID18 = zutatenFacade.getZutatenIdByBez(b18);
+    
+    username = username.toLowerCase();
+    int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
+    
+    int bzid = burgerzutatenFacade.save( zID1, zID2, zID3, zID4, zID5, zID6, zID7, zID8, zID9, zID10, zID11, zID12, zID13, zID14, zID15, zID16, zID17, zID18);
+    
+    double burgerpreis = zutatenFacade.getBurgerPreis(b1, b2, b3, b4, b5, b6 , b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18);
+
+    int bid = burgerFacade.saveBurger(bzid, burgerpreis, burgername, userid);
+    
+    List<Bestellung> bestList = bestellungFacade.findAll();
+    for(Bestellung current: bestList){
+        if(current.getBenutzerId().equals(userid)){
+           Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
+           current.setBestellungPreis(this.getGesPreis(current.getBestellungId()));
+        }
+        else{
+             Bestellung best = new Bestellung(userid);
+             Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);
+             best.setBestellungPreis(this.getGesPreis(best.getBestellungId()));
+        }
+    }
+}
+   
+    @Override
+     public void changeMenge(int bid, int menge){
+       Bestellung best;
+       List<Warenkorb> wk = warenkorbFacade.findAll();
+       for(Warenkorb current: wk){
+         if(current.getBurgerId().equals(bid)){
+             current.setMenge(menge);
+             best = bestellungFacade.find(current.getBestellungId());
+             best.setBestellungPreis(this.getGesPreis(current.getBestellungId()) );
+         }
+       }
     }
     
-    /*@Override
-    public void orderBurger(int bid){
-        
-    }*/
-
- 
-
+    @Override
+    public void deleteBurgerInWarenkorb(int bid){
+      Bestellung best;
+      double preis;
+      List<Warenkorb> wk = warenkorbFacade.findAll();
+      for(Warenkorb current: wk){
+         if(current.getBurgerId().equals(bid)){
+             warenkorbFacade.remove(current);
+             best = bestellungFacade.find(current.getBestellungId());
+             best.setBestellungPreis(this.getGesPreis(current.getBestellungId()));
+         }
+      }
+    }
+    @Override 
+    public double getGesPreis(int bestid){
+        double gespreis = 0;
+        double burgerpreis;
+        List<Warenkorb> wk = warenkorbFacade.findAll();
+        for(Warenkorb current: wk){
+            if(current.getBestellungId().equals(bestid)){
+                burgerpreis = burgerFacade.getPreisByBurgerId(current.getBurgerId());
+                gespreis = gespreis + burgerpreis * current.getMenge();
+            }
+        }
+        return gespreis;
+    }
 }
