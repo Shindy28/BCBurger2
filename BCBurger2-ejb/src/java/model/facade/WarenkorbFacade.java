@@ -29,5 +29,32 @@ public class WarenkorbFacade extends AbstractFacade<Warenkorb> implements Warenk
     public WarenkorbFacade() {
         super(Warenkorb.class);
     }
+
+    @Override
+    public int[] getBurgerIdByBestellungId(int bestid) {
+        int i = 0;
+        
+        List<Warenkorb> wk = this.findAll();
+         for(Warenkorb current: wk){
+             if(current.getBestellungId().equals(bestid)){
+                 i++;
+             }
+         }
+
+        
+        int[] bidList = new int[i];
+         i = 0;
+        
+        List<Warenkorb> b2 = this.findAll();
+         for(Warenkorb current: b2){
+             if(current.getBestellungId().equals(bestid)){
+                bidList[i] = current.getBurgerId();
+                i++;
+             }
+         }
+         
+         return bidList;
+    
+    }
     
 }

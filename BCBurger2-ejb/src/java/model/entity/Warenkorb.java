@@ -110,5 +110,9 @@ public class Warenkorb implements Serializable {
     public void setBestellungId(Integer bestellungId) {
         this.bestellungId = bestellungId;
     }
+
+    public Object getBenutzerId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

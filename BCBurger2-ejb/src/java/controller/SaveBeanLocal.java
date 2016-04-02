@@ -27,4 +27,8 @@ public interface SaveBeanLocal {
     public void changeMenge(int bid, int menge);
 
     public double getGesPreis(int bestid);
+
+    public void performOrder(int bid, String username, String burgername);
+
+    public String[][] getBurgerInWarenkorb(String username);
 }

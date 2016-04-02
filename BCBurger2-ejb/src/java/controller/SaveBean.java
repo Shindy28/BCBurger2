@@ -171,6 +171,26 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
 }
    
     @Override
+    public void performOrder(int bid, String username, String burgername){
+    
+    username = username.toLowerCase();
+    int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
+        
+    List<Bestellung> bestList = bestellungFacade.findAll();
+    for(Bestellung current: bestList){
+        if(current.getBenutzerId().equals(userid)){
+           Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
+           current.setBestellungPreis(this.getGesPreis(current.getBestellungId()));
+        }
+        else{
+             Bestellung best = new Bestellung(userid);
+             Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);
+             best.setBestellungPreis(this.getGesPreis(best.getBestellungId()));
+        }
+    }
+    }
+     
+    @Override
      public void changeMenge(int bid, int menge){
        Bestellung best;
        List<Warenkorb> wk = warenkorbFacade.findAll();
@@ -208,5 +228,54 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
             }
         }
         return gespreis;
+    }
+    
+    @Override
+    public String[][] getBurgerInWarenkorb(String username){
+        int bestid = 0;
+        int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
+       
+        List<Bestellung> bestList = bestellungFacade.findAll();
+        for(Bestellung current: bestList){
+           if(current.getBenutzerId().equals(userid)){
+               bestid = current.getBestellungId();
+           }
+       }
+        
+        int[] bidList = warenkorbFacade.getBurgerIdByBestellungId(bestid);
+        
+        String [][] burgerinwarenkorb= new String[bidList.length][21];
+        
+        Burgerzutaten bz;
+        Burger burger;
+         
+         for(int i=0; i< bidList.length; i++){
+            burger = burgerFacade.find(bidList[i]);
+            bz = burgerzutatenFacade.find(burger.getBurgerzutatenId());
+                
+            burgerinwarenkorb[i][0] = zutatenFacade.getBezByZutatenId(bz.getZid1());
+            burgerinwarenkorb[i][1] = zutatenFacade.getBezByZutatenId(bz.getZid2());
+            burgerinwarenkorb[i][2] = zutatenFacade.getBezByZutatenId(bz.getZid3());
+            burgerinwarenkorb[i][3] = zutatenFacade.getBezByZutatenId(bz.getZid4());
+            burgerinwarenkorb[i][4] = zutatenFacade.getBezByZutatenId(bz.getZid5());
+            burgerinwarenkorb[i][5] = zutatenFacade.getBezByZutatenId(bz.getZid6());
+            burgerinwarenkorb[i][6] = zutatenFacade.getBezByZutatenId(bz.getZid7());
+            burgerinwarenkorb[i][7] = zutatenFacade.getBezByZutatenId(bz.getZid8());
+            burgerinwarenkorb[i][8] = zutatenFacade.getBezByZutatenId(bz.getZid9());
+            burgerinwarenkorb[i][9] = zutatenFacade.getBezByZutatenId(bz.getZid10());
+            burgerinwarenkorb[i][10] = zutatenFacade.getBezByZutatenId(bz.getZid11());
+            burgerinwarenkorb[i][11] = zutatenFacade.getBezByZutatenId(bz.getZid12());
+            burgerinwarenkorb[i][12] = zutatenFacade.getBezByZutatenId(bz.getZid13());
+            burgerinwarenkorb[i][13] = zutatenFacade.getBezByZutatenId(bz.getZid14());
+            burgerinwarenkorb[i][14] = zutatenFacade.getBezByZutatenId(bz.getZid15());
+            burgerinwarenkorb[i][15] = zutatenFacade.getBezByZutatenId(bz.getZid16());
+            burgerinwarenkorb[i][16] = zutatenFacade.getBezByZutatenId(bz.getZid17());
+            burgerinwarenkorb[i][17] = zutatenFacade.getBezByZutatenId(bz.getZid18());
+            burgerinwarenkorb[i][18] = "" + burgerFacade.getPreisByBurgerId(bidList[i]) + "0€";
+            burgerinwarenkorb[i][19] = "" + bidList[i];
+            burgerinwarenkorb[i][20] = "" + burgerFacade.getNameByBurgerId(bidList[i]);
+            
+         }
+       return burgerinwarenkorb;
     }
 }
