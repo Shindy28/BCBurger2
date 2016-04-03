@@ -31,4 +31,6 @@ public interface SaveBeanLocal {
     public void performOrder(int bid, String username, String burgername);
 
     public String[][] getBurgerInWarenkorb(String username);
+
+    public int getBestellungIdByBenutzername(String username);
 }

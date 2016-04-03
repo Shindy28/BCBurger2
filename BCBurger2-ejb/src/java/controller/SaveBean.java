@@ -9,6 +9,7 @@ package controller;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import model.entity.Benutzer;
 import model.entity.Bestellung;
 import model.entity.Burger;
 import model.entity.Burgerzutaten;
@@ -253,7 +254,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     
     @Override
     public String[][] getBurgerInWarenkorb(String username){
-        int bestid = 0;
+        int bestid = -1;
         int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
        
         List<Bestellung> bestList = bestellungFacade.findAll();
@@ -298,5 +299,23 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
             
          }
        return burgerinwarenkorb;
+    }
+    
+    @Override
+    public int getBestellungIdByBenutzername(String username){
+        int userid = -1;
+        int bestid = -1;
+        List<Benutzer> benuList = benutzerFacade.findAll();
+        for(Benutzer current : benuList){
+            if(current.getBenutzerName().equals(username))
+                userid = current.getBenutzerId();
+        }
+        
+        List<Bestellung> bestList = bestellungFacade.findAll();
+        for(Bestellung current : bestList){
+            if(current.getBenutzerId().equals(userid))
+               bestid = current.getBestellungId();
+        }
+        return bestid;
     }
 }
