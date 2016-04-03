@@ -29,5 +29,4 @@ public class BestellungFacade extends AbstractFacade<Bestellung> implements Best
     public BestellungFacade() {
         super(Bestellung.class);
     }
-    
 }
