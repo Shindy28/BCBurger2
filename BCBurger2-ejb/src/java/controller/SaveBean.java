@@ -185,6 +185,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     for(Bestellung current: bestList){
         zaehlen++;
     }
+    System.out.println("performOrder: "+zaehlen);
     if(zaehlen == 0){
         System.out.println("Start");
         System.out.println(userid);
@@ -201,11 +202,14 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
         System.out.println("performOrder2");
         if(current.getBenutzerId().equals(userid)){
            Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
+           warenkorbFacade.create(wk);
            current.setBestellungPreis(this.getGesPreis(current.getBestellungId()));
         }
         else{
              Bestellung best = new Bestellung(userid);
+             bestellungFacade.create(best);
              Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);
+             warenkorbFacade.create(wk);
              best.setBestellungPreis(this.getGesPreis(best.getBestellungId()));
         }
     }
