@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Bestellung.findAll", query = "SELECT b FROM Bestellung b"),
     @NamedQuery(name = "Bestellung.findByBestellungId", query = "SELECT b FROM Bestellung b WHERE b.bestellungId = :bestellungId"),
-    @NamedQuery(name = "Bestellung.findByBerstellungPreis", query = "SELECT b FROM Bestellung b WHERE b.berstellungPreis = :berstellungPreis"),
+    @NamedQuery(name = "Bestellung.findByBestellungPreis", query = "SELECT b FROM Bestellung b WHERE b.bestellungPreis = :bestellungPreis"),
     @NamedQuery(name = "Bestellung.findByFilialenId", query = "SELECT b FROM Bestellung b WHERE b.filialenId = :filialenId")})
 public class Bestellung implements Serializable {
     
@@ -47,12 +47,14 @@ public class Bestellung implements Serializable {
     @Column(name = "BENUTZER_ID")
     private Integer benutzerId;
 
-    public Bestellung( ) {
+    public Bestellung() {
   
     }
     
     public Bestellung(int benutzerId){
+        System.out.println(benutzerId);
         this.benutzerId = benutzerId;
+        System.out.println(this.benutzerId);
     }
 
     public Integer getBestellungId() {

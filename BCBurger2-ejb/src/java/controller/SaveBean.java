@@ -175,9 +175,25 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     
     username = username.toLowerCase();
     int userid = benutzerFacade.getBenutzerIdByBenutzerName(username);
-        
+    int zaehlen = 0;
+    System.out.println("performOrder");
+    
     List<Bestellung> bestList = bestellungFacade.findAll();
     for(Bestellung current: bestList){
+        zaehlen++;
+    }
+    if(zaehlen == 0){
+        System.out.println("Start");
+        System.out.println(userid);
+        Bestellung best = new Bestellung(userid);
+        System.out.println("Bestellung angelegt:" + best.getBestellungId());
+        Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);
+        System.out.println("Warenkorb angelegt");
+        best.setBestellungPreis(this.getGesPreis(best.getBestellungId()));
+    }
+        
+    for(Bestellung current: bestList){
+        System.out.println("performOrder2");
         if(current.getBenutzerId().equals(userid)){
            Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
            current.setBestellungPreis(this.getGesPreis(current.getBestellungId()));

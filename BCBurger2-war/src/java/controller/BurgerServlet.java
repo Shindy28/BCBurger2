@@ -29,10 +29,15 @@ public class BurgerServlet extends HttpServlet {
 
         String param, belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username;
         
+        
+        System.out.println("Start");
         param = request.getParameter("submit");
         username = request.getParameter("username");
         String bidstr = request.getParameter("bid");
-        //int bid = Integer.parseInt(bidstr);
+        String burgername = request.getParameter("burgername");
+        
+        
+        System.out.println(param);
         
         if(param.equals("Speichern")){
 
@@ -56,14 +61,16 @@ public class BurgerServlet extends HttpServlet {
             belag18 = request.getParameter("Brotunten");
            
    
-            SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username);  
+            SaveBean.performSave(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username, burgername);  
             String[][] burgerArray = SaveBean.getSaveBurger(username.toLowerCase());
             request.setAttribute("burgerArray", burgerArray);
             request.setAttribute("username", username);
+            request.setAttribute("burgername", burgername);
             request.getRequestDispatcher("/Save.jsp?username="+username).forward(request, response);
         
         }
         else if (param.equals("Loeschen")){
+            
             int bid = Integer.parseInt(bidstr);
             SaveBean.deleteBurger(bid);
             String[][] burgerArray = SaveBean.getSaveBurger(username.toLowerCase());
@@ -75,6 +82,42 @@ public class BurgerServlet extends HttpServlet {
             else {
                 request.getRequestDispatcher("/Home.jsp?username="+username).forward(request, response);
             }
+        }
+        else if (param.equals("Bestellen")){
+            belag1 = request.getParameter("Brotoben");
+            belag2 = request.getParameter("Sossebelag2");
+            belag3 = request.getParameter("Gemuesebelag7");
+            belag4 = request.getParameter("Gemuesebelag6");
+            belag5 = request.getParameter("Gemuesebelag5");
+            belag6 = request.getParameter("Gemuesebelag4");
+            belag7 = request.getParameter("Gemuesebelag3");
+            belag8 = request.getParameter("Gemuesebelag2");
+            belag9 = request.getParameter("Gemuesebelag1");
+            belag10 = request.getParameter("Salatbelag");
+            belag11 = request.getParameter("Kaesebelag3");
+            belag12 = request.getParameter("Kaesebelag2");
+            belag13 = request.getParameter("Kaesebelag1");
+            belag14 = request.getParameter("Fleischbelag3");
+            belag15 = request.getParameter("Fleischbelag2");
+            belag16 = request.getParameter("Fleischbelag1");
+            belag17 = request.getParameter("Sossebelag1");
+            belag18 = request.getParameter("Brotunten");
+            
+            SaveBean.performOrder(belag1, belag2, belag3, belag4, belag5, belag6, belag7, belag8, belag9, belag10, belag11, belag12, belag13, belag14, belag15, belag16, belag17, belag18, username, burgername);
+            String[][] burgerArray = SaveBean.getBurgerInWarenkorb(username.toLowerCase());
+            request.setAttribute("burgerArray", burgerArray);
+            request.setAttribute("username", username);
+            request.getRequestDispatcher("/Warenkorb.jsp?username="+username).forward(request, response);
+            
+        }
+        else if (param.equals("Zu Warenkorb")){
+            int bid = Integer.parseInt(bidstr);
+            SaveBean.performOrder(bid, username, burgername);
+            String[][] burgerArray = SaveBean.getBurgerInWarenkorb(username.toLowerCase());
+            System.out.println(burgerArray.length);
+            request.setAttribute("burgerArray", burgerArray);
+            request.setAttribute("username", username);
+            request.getRequestDispatcher("/Warenkorb.jsp?username="+username).forward(request, response);
         }
     }
 }

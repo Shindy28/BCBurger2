@@ -97,7 +97,7 @@
                     <h4 id="burgerpreis">Preis: 4.00 €</h4>
                     <input id="preis" type="hidden" value="4"/>
                     <div class="save">
-                        <input class="textfield" type="text" name="Burgername" placeholder="Burgername" />
+                        <input class="textfield" type="text" name="burgername" placeholder="Burgername" />
                         <input class="button" type="submit" name="submit" value="Speichern"/>
                         <input class="button" type="submit" name="submit" value="Bestellen"/>
                     </div>

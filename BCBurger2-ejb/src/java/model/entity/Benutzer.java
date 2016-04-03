@@ -51,8 +51,6 @@ public class Benutzer implements Serializable {
     @Size(max = 50)
     @Column(name = "BENUTZER_PASSWORT")
     private String benutzerPasswort;
-    @Column(name = "BENUTZERBESTELLUNG_ID")
-    private Integer benutzerbestellungId;
 
     public Benutzer() {
     }
@@ -113,14 +111,6 @@ public class Benutzer implements Serializable {
     @Override
     public String toString() {
         return "model.Benutzer[ benutzerId=" + benutzerId + " ]";
-    }
-
-    public Integer getBenutzerbestellungId() {
-        return benutzerbestellungId;
-    }
-
-    public void setBenutzerbestellungId(Integer benutzerbestellungId) {
-        this.benutzerbestellungId = benutzerbestellungId;
     }
     
 }

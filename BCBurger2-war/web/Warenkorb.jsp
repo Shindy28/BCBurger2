@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Save
-    Created on : 30.03.2016, 15:54:56
+    Document   : Warenkorb
+    Created on : 03.04.2016, 19:00:30
     Author     : DanielRohleder
 --%>
 
@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="save.css" />
-        <title>Deine Burger</title>
+        <link rel="stylesheet" href="warenkorb.css" />
+        <title>Warenkorb</title>
     </head>
     <body>
         <header>
             <div id="kopf1"><img id="logo" src="img/BC_Burger_Logo2.png" alt="Burgerbild"/></div>
             <div id="kopf2"><h1>BC Burger</h1></div>
-            <div id="kopf4"><h3>Gespeicherte Burger<br>von <%= request.getParameter("username") %></h3></div>
+            <div id="kopf4"><h3>Warenkorb<br>von <%= request.getParameter("username") %></h3></div>
             <div id="kopf3"><a href="Home.jsp?username=<%= request.getParameter("username") %>">Neuen Burger konfigurieren?</a></div>
             <div id="kopf5"><img id="profil" src="img/Profil.png" alt=""/></div>
         </header>
@@ -86,6 +86,8 @@
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
                 <input type="submit" name="submit" value="Loeschen"/>
+            </form>
+            <form action="warenkorb" method="post">
                 <input type="submit" name="submit" value="Zu Warenkorb"/>
             </form>
         </div>
@@ -100,3 +102,4 @@
         
     </body>
 </html>
+
