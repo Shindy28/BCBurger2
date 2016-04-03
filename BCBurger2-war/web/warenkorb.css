@@ -124,12 +124,11 @@ h2 {
 
 div.mutter {
     padding: 10px;
-    background-color: rgba(0,0,0,0.6);
-    position: relative;
     float: left;
-    width: 95%;
-    //border: solid;
-    //border-color: black;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    //opacity: 0.6;
+    width: 71%;
 }
 
 div.burger1 {
@@ -178,4 +177,15 @@ a {
 a:visited {
     text-decoration: none;
     color: black;
+}
+
+#bestellung {
+    position: absolute;
+    right: 5px;
+    top: 200px;
+    //float: right;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.9);
+    width: 230px;
 }

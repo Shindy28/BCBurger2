@@ -23,17 +23,18 @@
         <% 
             String[][] burgerArray = (String[][])request.getAttribute("burgerArray");
             int anzahl = burgerArray.length;
+            System.out.println("Anzahl: "+anzahl);
             int i;
             int j = 0;
             int z = 0;
             request.setAttribute("username", request.getParameter("username"));
         %>
         <%
-            for (int y = 0; y <= anzahl/3; y++){
+            for (int y = 0; y <= anzahl/2; y++){
         %>
         <div class="mutter">
         <%
-            for (j = j; j < anzahl && z < 3; j++){
+            for (j = j; j < anzahl && z < 2; j++){
                 z++;
         %>
         <div class="burger<%= z %>">
@@ -82,13 +83,11 @@
                 }
             %>
             <h2>Preis: <%= burgerArray[anzahl-j-1][18] %></h2>
-            <form action="save" method="post">
+            <form action="warenkorb" method="post">
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
                 <input type="submit" name="submit" value="Loeschen"/>
-            </form>
-            <form action="warenkorb" method="post">
-                <input type="submit" name="submit" value="Zu Warenkorb"/>
+                <input id="menge<%= anzahl-j-1 %>" type="textfield" name="menge" value="1"/> 
             </form>
         </div>
         <%
@@ -99,7 +98,22 @@
         <%
             }
         %>
-        
+        <div id="bestellung">
+            <h3>Bestellung:</h3>
+            <div>
+                <form action="warenkorb" method="post">
+                    <%
+                        for(int x = 0; x < anzahl; x++){
+                    %>
+                    <input type="hidden" name="burgeranzahl<%= x %>" value=""><p>Mengex <%= burgerArray[x][20] %>: <%= burgerArray[x][18] %></p></input>
+                    <%
+                        }
+                    %>
+                    <input type="hidden" name="gesamtpreis" value=""><h4>Gesamtpreis:</h4></input>
+                    <input type="submit" name="kaufen" value="Kaufen" />
+                </form>
+            </div>
+        </div>
     </body>
 </html>
 

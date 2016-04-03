@@ -86,6 +86,10 @@
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
                 <input type="submit" name="submit" value="Loeschen"/>
+            </form>
+            <form action="warenkorb" method="post">
+                <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
+                <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/>
                 <input type="submit" name="submit" value="Zu Warenkorb"/>
             </form>
         </div>
