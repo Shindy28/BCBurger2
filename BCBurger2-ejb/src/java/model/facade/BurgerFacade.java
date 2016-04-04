@@ -78,5 +78,4 @@ public class BurgerFacade extends AbstractFacade<Burger> implements BurgerFacade
          
          return bidList;
     }
-    
 }

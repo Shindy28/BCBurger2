@@ -285,7 +285,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
         
         int[] bidList = warenkorbFacade.getBurgerIdByBestellungId(bestid);
         
-        String [][] burgerinwarenkorb= new String[bidList.length][21];
+        String [][] burgerinwarenkorb= new String[bidList.length][22];
         
         Burgerzutaten bz;
         Burger burger;
@@ -315,6 +315,7 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
             burgerinwarenkorb[i][18] = "" + burgerFacade.getPreisByBurgerId(bidList[i]) + "0€";
             burgerinwarenkorb[i][19] = "" + bidList[i];
             burgerinwarenkorb[i][20] = "" + burgerFacade.getNameByBurgerId(bidList[i]);
+            burgerinwarenkorb[i][21] = "" + warenkorbFacade.getMengeByBurgerId(bidList[i]);
             
          }
        return burgerinwarenkorb;

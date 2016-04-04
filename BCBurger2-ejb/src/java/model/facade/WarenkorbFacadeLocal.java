@@ -32,6 +32,8 @@ public interface WarenkorbFacadeLocal {
 
     public int[] getBurgerIdByBestellungId(int bestid);
 
+    public int getMengeByBurgerId(int burgerid);
+
 
     
 }
