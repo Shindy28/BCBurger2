@@ -217,11 +217,14 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
     for(Bestellung current: bestList){
         System.out.println("performOrder2");
         if(current.getBenutzerId().equals(userid)){
+           System.out.println("performOrder3");
            Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
            warenkorbFacade.create(wk);
+           System.out.println("Warenkorb angelegt");
            current.setBestellungPreis(this.getGesPreis(current.getBestellungId()));
         }
         else{
+            System.out.println("performOrder4");
              Bestellung best = new Bestellung(userid);
              bestellungFacade.create(best);
              Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);

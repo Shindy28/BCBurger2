@@ -98,6 +98,7 @@
                     <input id="preis" type="hidden" value="4"/>
                     <div class="save">
                         <input class="textfield" type="text" name="burgername" placeholder="Burgername" />
+                        <input type="hidden" name="ort" value="<%= request.getParameter("ort") %>" />
                         <input class="button" type="submit" name="submit" value="Speichern"/>
                         <input class="button" type="submit" name="submit" value="Bestellen"/>
                     </div>

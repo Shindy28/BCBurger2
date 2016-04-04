@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04.04.2016, 21:26:14
+    Author     : DanielRohleder
+*/
+
+html {
+    font-family: Arial;
+    color: white;
+    background-image: url(img/grill2.jpg);
+}
+
+#logo {
+    width: 100px;
+    float: left;
+    margin-right: 10%;
+}
+
+h1 {
+    font-size: 30px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.body {
+    width: 600px;
+    padding: 2%;
+    margin-left: 22%;
+    margin-top: 50px;
+    position: absolute;
+    //border: solid;
+    //border-color: black;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+#text{
+    position: relative;
+    float: left;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+#bestellung {
+    position: relative;
+    //right: 5px;
+    //top: 200px;
+    float: right;
+    padding: 20px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    //background-color: rgba(255,255,255,0.9);
+    width: 250px;
+}
+
+a:visited {
+    color: white;
+}
+
+a {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    text-decoration: none;
+    color: white;
+}

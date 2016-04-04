@@ -4,9 +4,17 @@
         <servlet-name>WarenkorbServlet</servlet-name>
         <servlet-class>controller.WarenkorbServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>KaufenServlet</servlet-name>
+        <servlet-class>controller.KaufenServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>WarenkorbServlet</servlet-name>
         <url-pattern>/WarenkorbServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KaufenServlet</servlet-name>
+        <url-pattern>/KaufenServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

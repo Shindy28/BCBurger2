@@ -33,8 +33,6 @@ public class WarenkorbServlet extends HttpServlet {
         username = request.getParameter("username");
         String bidstr = request.getParameter("bid");
         String burgername = request.getParameter("burgername");
-        String mengestr = request.getParameter("menge");
-        int menge = Integer.parseInt(mengestr);
         
         
         if (param.equals("Zu Warenkorb")){
@@ -61,6 +59,8 @@ public class WarenkorbServlet extends HttpServlet {
             }
         }
         else if (param.equals("Menge")){
+            String mengestr = request.getParameter("menge");
+            int menge = Integer.parseInt(mengestr);
             int bid = Integer.parseInt(bidstr);
             SaveBean.changeMenge(bid, menge);
             String[][] burgerArray = SaveBean.getBurgerInWarenkorb(username.toLowerCase());

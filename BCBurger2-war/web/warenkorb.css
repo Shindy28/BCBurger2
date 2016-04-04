@@ -189,3 +189,17 @@ a:visited {
     background-color: rgba(255,255,255,0.9);
     width: 230px;
 }
+
+#menge input{
+    width: 20px;
+}
+
+.button{
+    background-color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.button:active{
+    background-color: rgb(255,75,0);
+}

@@ -86,14 +86,19 @@
             <h2>Preis: <%= burgerArray[anzahl-j-1][18] %></h2>
             <form action="warenkorb" method="post">
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
+                <input type="hidden" name="ort" value="<%= request.getParameter("ort") %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
-                <input type="submit" name="submit" value="Loeschen"/>
+                <input type="hidden" name="submit" value="Menge"/>
+                <div id="menge">
+                    <p>Menge: </p>
+                    <input type="textfield" name="menge" value="<%= burgerArray[anzahl-j-1][21] %>" maxlength="1"/> 
+                </div>
             </form>
             <form action="warenkorb" method="post">
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
+                <input type="hidden" name="ort" value="<%= request.getParameter("ort") %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
-                <input type="hidden" name="submit" value="Menge"/>
-                <input id="menge<%= anzahl-j-1 %>" type="textfield" name="menge" value="1"/> 
+                <input class="button" type="submit" name="submit" value="Loeschen"/>
             </form>
         </div>
         <%
@@ -107,7 +112,7 @@
         <div id="bestellung">
             <h3>Bestellung:</h3>
             <div>
-                <form action="warenkorb" method="post">
+                <form action="kaufen" method="post">
                     <%
                         for(int x = 0; x < anzahl; x++){
                             String pr = burgerArray[x][18];
@@ -123,7 +128,9 @@
                         }
                     %>
                     <input type="hidden" name="gesamtpreis" value=""><h4>Gesamtpreis: <%= gespreis %>0€</h4></input>
-                    <input type="submit" name="kaufen" value="Kaufen" />
+                    <input type="hidden" name="username" value="<%= request.getParameter("username") %>" />
+                    <input type="hidden" name="ort" value="<%= request.getParameter("ort") %>"/> 
+                    <input class="button" type="submit" name="submit" value="Kaufen" />
                 </form>
             </div>
         </div>
