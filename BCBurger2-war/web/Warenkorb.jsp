@@ -27,6 +27,7 @@
             int i;
             int j = 0;
             int z = 0;
+            float gespreis = 0;
             request.setAttribute("username", request.getParameter("username"));
         %>
         <%
@@ -87,6 +88,11 @@
                 <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
                 <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
                 <input type="submit" name="submit" value="Loeschen"/>
+            </form>
+            <form action="warenkorb" method="post">
+                <input type="hidden" name="bid" value="<%= burgerArray[anzahl-j-1][19] %>"/> 
+                <input type="hidden" name="username" value="<%= request.getParameter("username") %>"/> 
+                <input type="hidden" name="submit" value="Menge"/>
                 <input id="menge<%= anzahl-j-1 %>" type="textfield" name="menge" value="1"/> 
             </form>
         </div>
@@ -104,12 +110,19 @@
                 <form action="warenkorb" method="post">
                     <%
                         for(int x = 0; x < anzahl; x++){
+                            String pr = burgerArray[x][18];
+                            pr = pr.substring(0, 4);
+                            float prfl = Float.parseFloat(pr);
+                            String mengestr = burgerArray[x][21];
+                            int menge = Integer.parseInt(mengestr);
+                            
                     %>
-                    <input type="hidden" name="burgeranzahl<%= x %>" value=""><p>Mengex <%= burgerArray[x][20] %>: <%= burgerArray[x][18] %></p></input>
+                    <input type="hidden" name="bid<%= x %>" value="<%= burgerArray[x][19] %>"><p><%= burgerArray[x][21] %>x <%= burgerArray[x][20] %>: <%= (prfl * menge) %>0€</p></input>
                     <%
+                            gespreis = gespreis + (prfl * menge);
                         }
                     %>
-                    <input type="hidden" name="gesamtpreis" value=""><h4>Gesamtpreis:</h4></input>
+                    <input type="hidden" name="gesamtpreis" value=""><h4>Gesamtpreis: <%= gespreis %>0€</h4></input>
                     <input type="submit" name="kaufen" value="Kaufen" />
                 </form>
             </div>

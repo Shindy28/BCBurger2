@@ -157,7 +157,22 @@ public void performSave(String b1, String b2, String b3, String b4, String b5, S
 
     int bid = burgerFacade.saveBurger(bzid, burgerpreis, burgername, userid);
     
+    int zaehlen = 0;
+    
     List<Bestellung> bestList = bestellungFacade.findAll();
+    for(Bestellung current: bestList){
+        zaehlen++;
+    }
+    
+    if(zaehlen == 0){
+        System.out.println(userid);
+        Bestellung best = new Bestellung(userid);
+        bestellungFacade.create(best);
+        Warenkorb wk = new Warenkorb(best.getBestellungId(),bid, 1);
+        warenkorbFacade.create(wk);
+        best.setBestellungPreis(this.getGesPreis(best.getBestellungId()));
+    }
+    
     for(Bestellung current: bestList){
         if(current.getBenutzerId().equals(userid)){
            Warenkorb wk = new Warenkorb(current.getBestellungId(),bid, 1);
