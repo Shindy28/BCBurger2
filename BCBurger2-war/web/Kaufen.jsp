@@ -24,7 +24,7 @@
             <img id="logo" src="img/BC_Burger_Logo_white2.png"/>
             <h1>Bestellbestaetigung</h1>
             <div id="text">
-                <p>Hallo <%= request.getParameter("username") %>,<br><br>hiermit bestätigen wir dir deine Bestellung.<br>Du kannst deine Bestellung in 30 min abholen.<br>Vielen Dank für deine Bestellung und bis zum nächsten Mal.<br><br>Bis dahin wünschen wir dir guten Appetit.<br>Dein BCBurger Team</p>
+                <p>Hallo <%= request.getParameter("username") %>,<br><br>hiermit bestätigen wir dir deine Bestellung.<br>Du kannst sie in 30 min abholen.<br>Vielen Dank und bis zum nächsten Mal.<br><br>Bis dahin wünschen wir dir guten Appetit.<br>Dein BCBurger Team</p>
             </div>
             <div id="bestellung">
             <h3>Bestellung:</h3>

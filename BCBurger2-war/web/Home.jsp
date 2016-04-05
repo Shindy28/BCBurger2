@@ -12,7 +12,7 @@
         <header>
             <div id="kopf1"><img id="logo" src="img/BC_Burger_Logo2.png" alt="Burgerbild"/></div>
             <div id="kopf2"><h1>BC Burger</h1></div>
-            <div id="kopf3"><h3>Kaiserallee 93<br><%= request.getAttribute("ort") %></h3></div>
+            <div id="kopf3"><h3>Kaiserallee 93<br>Karlsruhe</h3></div>
             <div id="kopf4"><h3>Hallo Burgerfreund<br><%= request.getParameter("username") %></h3></div>
             <div id="kopf5"><img id="profil" src="img/Profil.png" alt=""/></div>
         </header>
