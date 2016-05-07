@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.facade;
 
 import java.util.List;
@@ -12,7 +7,7 @@ import javax.persistence.PersistenceContext;
 import model.entity.Benutzer;
 
 /**
- *
+ * @desc Klasse enthält alle Methoden um ein Benutzer zu erstellen und zu verwalten
  * @author Florian
  */
 @Stateless
@@ -24,11 +19,27 @@ public class BenutzerFacade extends AbstractFacade<Benutzer> implements Benutzer
     protected EntityManager getEntityManager() {
         return em;
     }
-
+    
     public BenutzerFacade() {
         super(Benutzer.class);
     }
+   
 
+    /**
+     * @desc Methode führt Registrierung von Benutzer durch
+     * @param benutzerName
+     * @param passwort
+     */
+    @Override
+    public void register(String benutzerName, String passwort) {
+       this.create(new Benutzer(benutzerName, passwort));
+      
+    }
+    /**
+     * @desc Methode um ID von Benutzer zu ermitteln
+     * @param benutzerName
+     * @return benutzerId
+     */
     @Override
     public int getBenutzerIdByBenutzerName(String benutzerName) {
       List<Benutzer> benu = this.findAll();
@@ -39,21 +50,15 @@ public class BenutzerFacade extends AbstractFacade<Benutzer> implements Benutzer
       }
         return -1;
     }
-
-    /**
-     *
-     * @param benutzerName
+    
+     /**
+     * @desc Methode überprüft Passwort von Benutzer
+     * @param benutzerId
      * @param passwort
-     * @return
+     * @return true, falls Passwörter identisch
      */
     @Override
-    public boolean register(String benutzerName, String passwort) {
-       this.create(new Benutzer(benutzerName, passwort));
-       return true;
-    }
-
-    @Override
-    public boolean checkPasswordByBenutzeId(int benutzerId, String passwort) {
+    public boolean checkPasswordByBenutzerId(int benutzerId, String passwort) {
         return this.find(benutzerId).getBenutzerPasswort().equals(passwort);
     }
     

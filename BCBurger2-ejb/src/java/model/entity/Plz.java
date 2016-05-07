@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -20,7 +13,8 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc(Für spätere Erweiterung) Entity Klasse analog zur Tabelle PLZ, zu einer Postleitzahl wird der zugehörige Ort gespeichert.
+ * Die PLZ dient zur eindeutigen Identifikation von Orten.
  * @author Florian
  */
 @Entity
@@ -30,10 +24,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Plz.findAll", query = "SELECT p FROM Plz p"),
     @NamedQuery(name = "Plz.findByPlz", query = "SELECT p FROM Plz p WHERE p.plz = :plz"),
     @NamedQuery(name = "Plz.findByOrt", query = "SELECT p FROM Plz p WHERE p.ort = :ort")})
+
 public class Plz implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @NotNull
     @Column(name = "PLZ")
@@ -44,11 +38,11 @@ public class Plz implements Serializable {
 
     public Plz() {
     }
-
+//Konstruktor
     public Plz(String ort) {
         this.ort = ort;
     }
-
+//Set und Get Methoden
     public Integer getPlz() {
         return plz;
     }

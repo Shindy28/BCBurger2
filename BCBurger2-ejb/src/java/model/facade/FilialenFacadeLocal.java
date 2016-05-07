@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Filialen;
 
 /**
- *
+ * @desc Lokales Interface zur FilialenFacade Klasse
  * @author Florian
  */
 @Local

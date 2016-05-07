@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.facade;
 
 import java.util.List;
@@ -10,7 +5,7 @@ import javax.ejb.Local;
 import model.entity.Burger;
 
 /**
- *
+ * @desc Lokales Interface zur BurgerFacade Klasse
  * @author Florian
  */
 @Local
@@ -32,10 +27,10 @@ public interface BurgerFacadeLocal {
     
     public int saveBurger(int bzid, double burgerPreis, String burgerName, int benutzerId);
 
-    public double getPreisByBurgerId(int burgerid);
+    public double getPreisByBurgerId(int burgerId);
 
-    public String getNameByBurgerId(int burgerid);
+    public String getNameByBurgerId(int burgerId);
 
-    public int[] getBurgerIdByBenutzerId(int userid);
+    public int[] getBurgerIdByBenutzerId(int benutzerId);
     
 }

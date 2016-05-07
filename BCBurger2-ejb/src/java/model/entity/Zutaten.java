@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
@@ -20,7 +15,9 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc Entity Klasse analog zur Tabelle Zutaten, zu einer Zutat werden die Bezeichnung der Zutat
+ * und der Preis für die einzelne Zutat gespeicher.
+ * Die ZutatenId dient zur eindeutigen Identifikation von Zutaten und wird automatisch generiert.
  * @author Florian
  */
 @Entity
@@ -43,18 +40,17 @@ public class Zutaten implements Serializable {
     @Size(max = 50)
     @Column(name = "ZUTATEN_BEZEICHNUNG")
     private String zutatenBezeichnung;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "ZUTATEN_PREIS")
     private Double zutatenPreis;
   
     public Zutaten() {
     }
-
+//Konstruktor
     public Zutaten(String zutatenBezeichnung, Double zutatenPreis ) {
         this.zutatenBezeichnung = zutatenBezeichnung;
         this.zutatenPreis = zutatenPreis;
     }
-
+//Set und Get Methoden
     public Integer getZutatenId() {
         return zutatenId;
     }

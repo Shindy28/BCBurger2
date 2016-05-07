@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
@@ -19,7 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc Entity Klasse analog zur Tabelle Bestellung, zu einer Bestellung werden die BenutzerId zur Zuordnung zum Benutzer 
+ * und der Preis für die gesamte Bestellung (FilialenId für spätere Erweiterung) gespeichert.
+ * Die BestellungId dient zur eindeutigen Identifikation von BEstellungen und wird automatisch generiert.
  * @author Florian
  */
 @Entity
@@ -39,7 +36,6 @@ public class Bestellung implements Serializable {
     @NotNull
     @Column(name = "BESTELLUNG_ID")
     private Integer bestellungId;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "BESTELLUNG_PREIS")
     private Double bestellungPreis;
     @Column(name = "FILIALEN_ID")
@@ -50,13 +46,11 @@ public class Bestellung implements Serializable {
     public Bestellung() {
   
     }
-    
+//Konstruktor
     public Bestellung(int benutzerId){
-        System.out.println(benutzerId);
         this.benutzerId = benutzerId;
-        System.out.println(this.benutzerId);
     }
-
+//Set und Get Methoden
     public Integer getBestellungId() {
         return bestellungId;
     }
@@ -75,6 +69,15 @@ public class Bestellung implements Serializable {
 
     public void setFilialenId(Integer filialenId) {
         this.filialenId = filialenId;
+    }
+    
+    
+    public Integer getBenutzerId() {
+        return benutzerId;
+    }
+
+    public void setBenutzerId(Integer benutzerId) {
+        this.benutzerId = benutzerId;
     }
 
     @Override
@@ -100,14 +103,5 @@ public class Bestellung implements Serializable {
     @Override
     public String toString() {
         return "model.Bestellung[ bestellungId=" + bestellungId + " ]";
-    }
-
-    public Integer getBenutzerId() {
-        return benutzerId;
-    }
-
-    public void setBenutzerId(Integer benutzerId) {
-        this.benutzerId = benutzerId;
-    }
-    
+    }  
 }

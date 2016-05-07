@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Bestellung;
 
 /**
- *
+ * @desc Lokales Interface zur BestellungFacade Klasse
  * @author Florian
  */
 @Local

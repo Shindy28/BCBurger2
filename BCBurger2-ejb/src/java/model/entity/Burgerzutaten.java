@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc Entity Klasse analog zur Tabelle Burgerzutaten, in Burgerzutaten werden die maximal 18 ZutatenIds zur Zuordnung der Zutaten 
+ * eines Burger gespeichert.
+ * Die BurgerzutatenId dient zur eindeutigen Identifikation von den Zutaten eines Burger und wird automatisch generiert.
  * @author Florian
  */
 @Entity
@@ -31,7 +27,14 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Burgerzutaten.findByBurgerzutatenId", query = "SELECT b FROM Burgerzutaten b WHERE b.burgerzutatenId = :burgerzutatenId")})
         
 public class Burgerzutaten implements Serializable {
-
+    
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "BURGERZUTATEN_ID")
+    private Integer burgerzutatenId;
     @Column(name = "ZID1")
     private Integer zid1;
     @Column(name = "ZID2")
@@ -68,17 +71,15 @@ public class Burgerzutaten implements Serializable {
     private Integer zid17;
     @Column(name = "ZID18")
     private Integer zid18;
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "BURGERZUTATEN_ID")
-    private Integer burgerzutatenId;
+  
 
     public Burgerzutaten() {
     }
-    public Burgerzutaten(int b1, int b2, int b3, int b4, int b5, int b6, int b7, int b8, int b9, int b10, int b11, int b12, int b13, int b14, int b15, int b16, int b17, int b18) {
+//Konstruktor
+    public Burgerzutaten(int b1, int b2, int b3, int b4, int b5, 
+                         int b6, int b7, int b8, int b9, int b10, 
+                         int b11, int b12, int b13, int b14, int b15, 
+                         int b16, int b17, int b18) {
         this.zid1 = b1;
         this.zid2 = b2;
         this.zid3 = b3;
@@ -99,38 +100,13 @@ public class Burgerzutaten implements Serializable {
         this.zid18 = b18;
       
     }
-    
+//Set und Get Methoden    
     public Integer getBurgerzutatenId() {
         return burgerzutatenId;
     }
 
     public void setBurgerzutatenId(Integer burgerzutatenId) {
         this.burgerzutatenId = burgerzutatenId;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (burgerzutatenId != null ? burgerzutatenId.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Burgerzutaten)) {
-            return false;
-        }
-        Burgerzutaten other = (Burgerzutaten) object;
-        if ((this.burgerzutatenId == null && other.burgerzutatenId != null) || (this.burgerzutatenId != null && !this.burgerzutatenId.equals(other.burgerzutatenId))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "model.entity.Burgerzutaten[ burgerzutatenId=" + burgerzutatenId + " ]";
     }
 
     public Integer getZid1() {
@@ -275,5 +251,30 @@ public class Burgerzutaten implements Serializable {
 
     public void setZid18(Integer zid18) {
         this.zid18 = zid18;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (burgerzutatenId != null ? burgerzutatenId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Burgerzutaten)) {
+            return false;
+        }
+        Burgerzutaten other = (Burgerzutaten) object;
+        if ((this.burgerzutatenId == null && other.burgerzutatenId != null) || (this.burgerzutatenId != null && !this.burgerzutatenId.equals(other.burgerzutatenId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "model.entity.Burgerzutaten[ burgerzutatenId=" + burgerzutatenId + " ]";
     }
 }

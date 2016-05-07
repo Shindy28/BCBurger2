@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.facade;
 
 import java.util.List;
@@ -10,7 +5,7 @@ import javax.ejb.Local;
 import model.entity.Benutzer;
 
 /**
- *
+ * @desc Lokales Interface zur BenutzerFacade Klasse
  * @author Florian
  */
 @Local
@@ -29,17 +24,12 @@ public interface BenutzerFacadeLocal {
     List<Benutzer> findRange(int[] range);
 
     int count();
-
+    
+    public void register(String benutzerName, String passwort); 
+   
     public int getBenutzerIdByBenutzerName(String benutzerName);
     
-    /**
-     *
-     * @param benutzerId
-     * @param password
-     * @return
-     */
-    public boolean checkPasswordByBenutzeId(int benutzerId, String passwort);
+    public boolean checkPasswordByBenutzerId(int benutzerId, String passwort);
 
-    public boolean register(String benutzerName, String passwor);
     
 }

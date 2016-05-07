@@ -9,11 +9,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import model.entity.Benutzer;
 import model.entity.Zutaten;
 
 /**
- *
+ * @desc Klasse enthält alle Methoden um Zutaten eines Burgers zu verwalten und den Preis zu berechnen
  * @author Florian
  */
 @Stateless
@@ -28,9 +27,14 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
 
     public ZutatenFacade() {
         super(Zutaten.class);
-    }
-    
-    @Override
+    }   
+
+    /**
+     * @desc Methode um ID von Zutat zu ermitteln
+     * @param bezeichnung der Zutat
+     * @return zutatenId
+     */
+        @Override
     public int getZutatenIdByBez(String bezeichnung) {
       List<Zutaten> zut = this.findAll();
       for(Zutaten current: zut){
@@ -39,9 +43,14 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
            }
       }
         return -1;
-    }
-    
-    @Override
+    }  
+
+    /**
+     * @desc Methode um Preis für eine Zutat zu ermitteln
+     * @param bezeichnung der Zutat
+     * @return zutatenPreis
+     */
+        @Override
     public double getZutatenPreisByBez(String bezeichnung) {
       List<Zutaten> zut = this.findAll();
       for(Zutaten current: zut){
@@ -53,9 +62,9 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
     }
 
     /**
-     *
-     * @param b1
-     * @param b2
+     * @desc Methode ermittelt den gesamten Preis für einen Burger
+     * @param b1 Bezeichnung von Zutat an erster Stelle
+     * @param b2 Bezeichnung von Zutat an zweiter Stelle usw.
      * @param b3
      * @param b4
      * @param b5
@@ -72,11 +81,15 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
      * @param b16
      * @param b17
      * @param b18
-     * @return
+     * @return burgerPreis
      */
-    @Override
-    public double getBurgerPreis(String b1, String b2, String b3, String b4, String b5, String b6, String b7, String b8, String b9, String b10, String b11, String b12, String b13, String b14, String b15, String b16, String b17, String b18) {
-    
+        @Override
+    public double getBurgerPreis(String b1, String b2, String b3, String b4, String b5,
+                                 String b6, String b7, String b8, String b9, String b10, 
+                                 String b11, String b12, String b13, String b14, String b15, 
+                                 String b16, String b17, String b18) {
+   
+//Aufsummieren der einzelnen Preise der Zutaten, die anhand der Bezeichnung für die Zutat ermittelt werden
    double burgerpreis =  this.getZutatenPreisByBez(b1);
    burgerpreis = burgerpreis + this.getZutatenPreisByBez(b2);
    burgerpreis = burgerpreis + this.getZutatenPreisByBez(b3);
@@ -98,14 +111,15 @@ public class ZutatenFacade extends AbstractFacade<Zutaten> implements ZutatenFac
    
    return burgerpreis;
    
-    }
-    
+    }   
+//Methode liefert bezeichung für Zutat zu entsprechender zutatenId aus der Datenbank
+
     /**
-     *
-     * @param zid
-     * @return
+     * @desc Methode um Bezeichnung von Zutat zu ermitteln
+     * @param zid zutatenId
+     * @return Bezeichnung von Zutat
      */
-    @Override
+        @Override
   public String getBezByZutatenId(int zid){
       List<Zutaten> zut = this.findAll();
       for(Zutaten current: zut){

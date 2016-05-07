@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Zutaten;
 
 /**
- *
+ * @desc Lokales Interface zur ZutatenFacade Klasse
  * @author Florian
  */
 @Local

@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Plz;
 
 /**
- *
+ * @desc Lokales Interface zu PlzFacade Klasse
  * @author Florian
  */
 @Local

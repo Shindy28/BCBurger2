@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
@@ -20,7 +15,9 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc Entity Klasse analog zur Tabelle Benutzer, zu einem Benutzer werden Name und Passwort 
+ * (E-Mail für spätere Erweiterungen) gespeichert.
+ * Die BenutzerId dient zur eindeutigen Identifikation von Benutzern und wird automatisch generiert.
  * @author Florian
  */
 @Entity
@@ -54,12 +51,12 @@ public class Benutzer implements Serializable {
 
     public Benutzer() {
     }
-
+//Konstruktor
     public Benutzer(String benutzerName,String benutzerPasswort) {
         this.benutzerName = benutzerName;
         this.benutzerPasswort = benutzerPasswort;
     }
-
+//Set und Get Methoden
     public Integer getBenutzerId() {
         return benutzerId;
     }

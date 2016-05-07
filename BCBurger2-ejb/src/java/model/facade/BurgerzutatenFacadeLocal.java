@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Burgerzutaten;
 
 /**
- *
+ * @desc Lokales Interface zur Klasse BurgerzutatenFacade
  * @author Florian
  */
 @Local
@@ -30,7 +30,7 @@ public interface BurgerzutatenFacadeLocal {
 
     int count();
     
-    public int save(int b1, int b2, int b3, int b4, int b5, int b6, int b7, int b8, int b9, int b10, int b11, int b12, int b13, int b14, int b15, int b16, int b17, int b18);
+    public int save(int zid1, int zid2, int zid3, int zid4, int zid5, int zid6, int zid7, int zid8, int zid9, int zid10, int zid11, int zid12, int zid13, int zid14, int zid15, int zid16,int zid17, int zid18);
 
     
 }

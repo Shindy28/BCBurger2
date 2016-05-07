@@ -10,7 +10,7 @@ import javax.ejb.Local;
 import model.entity.Warenkorb;
 
 /**
- *
+ * @desc Lokales Interface zur WarenkorbFacade Klasse
  * @author Florian
  */
 @Local
@@ -30,9 +30,9 @@ public interface WarenkorbFacadeLocal {
 
     int count();
 
-    public int[] getBurgerIdByBestellungId(int bestid);
+    public int[] getBurgerIdByBestellungId(int bestId);
 
-    public int getMengeByBurgerId(int burgerid);
+    public int getMengeByBurgerId(int burgerId);
 
 
     

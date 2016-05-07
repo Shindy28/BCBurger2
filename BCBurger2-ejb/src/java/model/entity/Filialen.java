@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
@@ -20,7 +15,9 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc(Für spätere Erweiterung) Entity Klasse analog zur Tabelle Filialen, zu einer Filiale werden Der Name der Filiale, 
+ * die Straße, die Hausnummer und die PLZ zur Zuordnung zum Ort gespeichert.
+ * Die FilialenId dient zur eindeutigen Identifikation von Filialen und wird automatisch generiert.
  * @author Florian
  */
 @Entity
@@ -33,6 +30,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Filialen.findByPlz", query = "SELECT f FROM Filialen f WHERE f.plz = :plz"),
     @NamedQuery(name = "Filialen.findByFilialenStrasse", query = "SELECT f FROM Filialen f WHERE f.filialenStrasse = :filialenStrasse"),
     @NamedQuery(name = "Filialen.findByFilialenHausnummer", query = "SELECT f FROM Filialen f WHERE f.filialenHausnummer = :filialenHausnummer")})
+
 public class Filialen implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -54,18 +52,17 @@ public class Filialen implements Serializable {
 
     public Filialen() {
     }
-
-    public Filialen(String filialenName, Integer plz, String filialenStrasse, Integer FilialenHausnummer) {
+//Konstruktor
+    public Filialen(String filialenName, int plz, String filialenStrasse, int filialenHausnummer) {
         this.filialenName = filialenName;
         this.plz = plz;
         this.filialenStrasse = filialenStrasse;
         this.filialenHausnummer = filialenHausnummer;
     }
-
+//Set und Get Methoden
     public Integer getFilialenId() {
         return filialenId;
     }
-
 
     public String getFilialenName() {
         return filialenName;

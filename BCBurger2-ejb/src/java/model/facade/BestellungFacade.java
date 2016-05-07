@@ -9,10 +9,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import model.entity.Bestellung;
-import model.entity.Warenkorb;
 
 /**
- *
+ * @desc Klasse enthält alle Methoden um Bestellung zu erstellen
  * @author Florian
  */
 @Stateless
@@ -20,6 +19,8 @@ import model.entity.Warenkorb;
 public class BestellungFacade extends AbstractFacade<Bestellung> implements BestellungFacadeLocal {
     @PersistenceContext(unitName = "BCBurger2-ejbPU")
     private EntityManager em;
+    private Object benutzerFacade;
+    private Object bestellungFacade;
 
     @Override
     protected EntityManager getEntityManager() {

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.entity;
 
 import java.io.Serializable;
@@ -19,7 +14,9 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
+ * @desc Entity Klasse analog zur Tabelle Warenkorb, zu einem Warenkorb werden die BurgerId für die Zurordnung zum Burger,
+ * die Menge für die Anzahl der Burger die sich im Warenkorb befinden die BestellungId für die Zuordnung zur Bestellung gespeichert.
+ * die WarenkorbId dient zur eindeutigen Identifikation von Warenkörben und wird automatisch generiert
  * @author Florian
  */
 @Entity
@@ -47,13 +44,13 @@ public class Warenkorb implements Serializable {
 
     public Warenkorb() {
     }
-
-    public Warenkorb(int bestellungId,int burgerId, int menge ) {
+//Konstruktor
+    public Warenkorb(int bestellungId, int burgerId, int menge) {
         this.burgerId = burgerId;
         this.bestellungId = bestellungId;
         this.menge = menge;
     }
-
+//Set und Get Methoden
     public Integer getWarenkorbId() {
         return warenkorbId;
     }
@@ -77,7 +74,14 @@ public class Warenkorb implements Serializable {
     public void setMenge(Integer menge) {
         this.menge = menge;
     }
+      public Integer getBestellungId() {
+        return bestellungId;
+    }
 
+    public void setBestellungId(Integer bestellungId) {
+        this.bestellungId = bestellungId;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -102,17 +106,4 @@ public class Warenkorb implements Serializable {
     public String toString() {
         return "model.entity.Warenkorb[ warenkorbId=" + warenkorbId + " ]";
     }
-
-    public Integer getBestellungId() {
-        return bestellungId;
-    }
-
-    public void setBestellungId(Integer bestellungId) {
-        this.bestellungId = bestellungId;
-    }
-
-    public Object getBenutzerId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
