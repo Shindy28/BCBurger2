@@ -197,7 +197,7 @@ public class BenutzerFacadeTest {
         EJBContainer container = javax.ejb.embeddable.EJBContainer.createEJBContainer();
         BenutzerFacadeLocal instance = (BenutzerFacadeLocal)container.getContext().lookup("java:global/classes/BenutzerFacade");
         boolean expResult = false;
-        boolean result = instance.checkPasswordByBenutzeId(benutzerId, passwort);
+        boolean result = instance.checkPasswordByBenutzerId(benutzerId, passwort);
         assertEquals(expResult, result);
         container.close();
         // TODO review the generated test code and remove the default call to fail.

@@ -1,22 +1,22 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- * jonas beschde
+ * 
+ * Durch Klicken auf die Bilder der Home.jsp wird der aktuelle Burger aktualisiert
+ * @param {String} name - Name des html-Elements
+ * @param {String} klasse - Klasse des html-Elements
+ * 
  */
-/*aktuell2*/
 var ausgabe = function(name, klasse) {
         
         var preis = parseFloat(document.getElementById("preis").value);
                 
-        if (klasse == "fleisch1" || klasse == "kaese1"){
+        if (klasse === "fleisch1" || klasse === "kaese1"){
             document.getElementsByName(klasse)[0].checked = true;
             document.getElementsByName(klasse)[1].checked = true;
             document.getElementsByName(klasse)[2].checked = true;
-            if (klasse == "fleisch1") {
+            if (klasse === "fleisch1") {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src !== "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
@@ -24,13 +24,13 @@ var ausgabe = function(name, klasse) {
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                 }
                 else {
-                    alert("Du darft maximal 3 Stueck Fleisch auswaehlen!");
+                    alert("Du darfst maximal 3 Stueck Fleisch auswaehlen!");
                 }
             }
-            if (klasse == "kaese1") {
+            if (klasse === "kaese1") {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src !== "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
@@ -38,7 +38,7 @@ var ausgabe = function(name, klasse) {
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                 }
                 else {
-                    alert("Du darft maximal 3 Stueck Kaese auswaehlen!");
+                    alert("Du darfst maximal 3 Stueck Kaese auswaehlen!");
                 }
             }
         }        
@@ -54,7 +54,7 @@ var ausgabe = function(name, klasse) {
         if (!document.getElementsByName(klasse)[2].checked) {
             document.getElementsByClassName(klasse)[2].style.borderColor = 'transparent';
         }
-        if (klasse == "gemuese1" || klasse == "sosse1") {
+        if (klasse === "gemuese1" || klasse === "sosse1") {
             if (!document.getElementsByName(klasse)[3].checked) {
                 document.getElementsByClassName(klasse)[3].style.borderColor = 'transparent';
             }
@@ -63,7 +63,7 @@ var ausgabe = function(name, klasse) {
             }
         }
         
-        if (klasse == "gemuese1") {
+        if (klasse === "gemuese1") {
             if (!document.getElementsByName(klasse)[5].checked) {
                 document.getElementsByClassName(klasse)[5].style.borderColor = 'transparent';
             }
@@ -72,7 +72,7 @@ var ausgabe = function(name, klasse) {
             }
         }
         
-        if (klasse == "sosse1") {
+        if (klasse === "sosse1") {
             var zaehlen = 0;
             for (var i = 0; i < 5; i++) {
                 if (document.getElementsByName(klasse)[i].checked) {
@@ -106,7 +106,7 @@ var ausgabe = function(name, klasse) {
             case "newbeef": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/newbeef.png";
                             document.getElementById("inputfleischbelag" + i).value = "Newbeef";
                             preis = preis + 2.0;
@@ -119,7 +119,7 @@ var ausgabe = function(name, klasse) {
             case "chicken": {                       
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/chicken.png";
                             document.getElementById("inputfleischbelag" + i).value = "Chicken";
                             preis = preis + 2.0;
@@ -132,7 +132,7 @@ var ausgabe = function(name, klasse) {
             case "veggie": {                       
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                        if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                             document.getElementById("fleischbelag" + i).src = "img/Fleisch/veggie.png";
                             document.getElementById("inputfleischbelag" + i).value = "Veggie";
                             preis = preis + 2.0;
@@ -145,7 +145,7 @@ var ausgabe = function(name, klasse) {
             case "cheese": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/cheese.png";
                             document.getElementById("inputkaesebelag" + i).value = "Cheese";
                             preis = preis + 0.5;
@@ -158,7 +158,7 @@ var ausgabe = function(name, klasse) {
             case "cheddar": {                       
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/cheddar.png";
                             document.getElementById("inputkaesebelag" + i).value = "Cheddar";
                             preis = preis + 0.5;
@@ -171,7 +171,7 @@ var ausgabe = function(name, klasse) {
             case "emmentaler": {                       
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=3; i++) {                                
-                        if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                        if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                             document.getElementById("kaesebelag" + i).src = "img/Kaese/emmentaler.png";
                             document.getElementById("inputkaesebelag" + i).value = "Emmentaler";
                             preis = preis + 0.5;
@@ -229,7 +229,7 @@ var ausgabe = function(name, klasse) {
             case "tomate": {                        
                 if (document.getElementsByName(klasse)[0].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/tomate.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Tomate";
                             break;
@@ -238,7 +238,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {                        
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/tomate.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/tomate.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -250,7 +250,7 @@ var ausgabe = function(name, klasse) {
             case "gurke": {                        
                 if (document.getElementsByName(klasse)[1].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/gurke.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Gurke";
                             break;
@@ -259,7 +259,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/gurke.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/gurke.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -271,7 +271,7 @@ var ausgabe = function(name, klasse) {
             case "essiggurkerl": {                        
                 if (document.getElementsByName(klasse)[2].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/essiggurkerl.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Essiggurkerl";
                             break;
@@ -280,7 +280,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/essiggurkerl.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/essiggurkerl.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -292,7 +292,7 @@ var ausgabe = function(name, klasse) {
             case "zwiebelrot": {                        
                 if (document.getElementsByName(klasse)[3].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/zwiebelrot.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Zwiebelrot";
                             break;
@@ -301,7 +301,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/zwiebelrot.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/zwiebelrot.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             break;
@@ -313,7 +313,7 @@ var ausgabe = function(name, klasse) {
             case "rostzwiebel": {                        
                 if (document.getElementsByName(klasse)[4].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/rostzwiebel.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Rostzwiebel";
                             preis = preis + 0.5;
@@ -323,7 +323,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/rostzwiebel.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/rostzwiebel.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -336,7 +336,7 @@ var ausgabe = function(name, klasse) {
             case "jalapenos": {                        
                 if (document.getElementsByName(klasse)[5].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/jalapenos.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Jalapenos";
                             preis = preis + 0.5;
@@ -346,7 +346,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/jalapenos.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/jalapenos.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -359,7 +359,7 @@ var ausgabe = function(name, klasse) {
             case "bacon": {                        
                 if (document.getElementsByName(klasse)[6].checked) {
                     for (var i=1; i<=7; i++) {                                
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/leer.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/bacon.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Bacon";
                             preis = preis + 1.0;
@@ -369,7 +369,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=7; i>=1; i--) {
-                        if (document.getElementById("gemuesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Gemuese/bacon.png"){
+                        if (document.getElementById("gemuesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Gemuese/bacon.png"){
                             document.getElementById("gemuesebelag" + i).src = "img/Gemuese/leer.png";
                             document.getElementById("inputgemuesebelag" + i).value = "Leer";
                             preis = preis - 1.0;
@@ -382,7 +382,7 @@ var ausgabe = function(name, klasse) {
             case "ketchup": {                        
                 if (document.getElementsByName(klasse)[0].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/ketchup.png";
                             document.getElementById("inputsossebelag" + i).value = "Ketchup";
                             preis = preis + 0.5;
@@ -397,7 +397,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/ketchup.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/ketchup.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -410,7 +410,7 @@ var ausgabe = function(name, klasse) {
             case "senf": {                        
                 if (document.getElementsByName(klasse)[1].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/senf.png";
                             document.getElementById("inputsossebelag" + i).value = "Senf";
                             preis = preis + 0.5;
@@ -425,7 +425,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/senf.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/senf.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -438,7 +438,7 @@ var ausgabe = function(name, klasse) {
             case "sandwischsauce": {                        
                 if (document.getElementsByName(klasse)[2].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/sandwischsauce.png";
                             document.getElementById("inputsossebelag" + i).value = "Sandwischsauce";
                             preis = preis + 0.5;
@@ -453,7 +453,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/sandwischsauce.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/sandwischsauce.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -466,7 +466,7 @@ var ausgabe = function(name, klasse) {
             case "bigmacsauce": {                        
                 if (document.getElementsByName(klasse)[3].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/bigmacsauce.png";
                             document.getElementById("inputsossebelag" + i).value = "Bigmacsauce";
                             preis = preis + 0.5;
@@ -481,7 +481,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/bigmacsauce.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/bigmacsauce.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -494,7 +494,7 @@ var ausgabe = function(name, klasse) {
             case "gucamaole": {                        
                 if (document.getElementsByName(klasse)[4].checked && zaehlen <= 2) {
                     for (var i=1; i<=2; i++) {                                
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/leer.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/gucamaole.png";
                             document.getElementById("inputsossebelag" + i).value = "Gucamaole";
                             preis = preis + 0.5;
@@ -509,7 +509,7 @@ var ausgabe = function(name, klasse) {
                 }
                 else {
                     for (var i=2; i>=1; i--) {                        
-                        if (document.getElementById("sossebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Sosse/gucamaole.png"){
+                        if (document.getElementById("sossebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Sosse/gucamaole.png"){
                             document.getElementById("sossebelag" + i).src = "img/Sosse/leer.png";
                             document.getElementById("inputsossebelag" + i).value = "Leer";
                             preis = preis - 0.5;
@@ -522,26 +522,34 @@ var ausgabe = function(name, klasse) {
         }
         
         document.getElementById("preis").value = preis;
-        document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €'
+        document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €';
                
 };
+
+/* 
+ * 
+ * Durch Klicken auf einen Plus-Button unter den Fleisch/Kaese Bildern der Home.jsp wird der aktuelle Burger aktualisiert
+ * @param {String} name - Name des html-Elements
+ * @param {String} klasse - Klasse des html-Elements
+ * 
+ */
 
 var plus = function(name, klasse){
     
     var preis = parseFloat(document.getElementById("preis").value);
     
-    if (klasse == "fleisch1") {
+    if (klasse === "fleisch1") {
         var zaehlen = 0;
         for (var i=1; i<=3; i++) {                                
-            if (document.getElementById("fleischbelag" + i).src != "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+            if (document.getElementById("fleischbelag" + i).src !== "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                 zaehlen = zaehlen + 1;
             }
         }
     }
-    if (klasse == "kaese1") {
+    if (klasse === "kaese1") {
         var zaehlen = 0;
         for (var i=1; i<=3; i++) {                                
-            if (document.getElementById("kaesebelag" + i).src != "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+            if (document.getElementById("kaesebelag" + i).src !== "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                 zaehlen = zaehlen + 1;
             }
         }
@@ -551,17 +559,17 @@ var plus = function(name, klasse){
             case "newbeef": { 
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/newbeef.png";
                         document.getElementById("inputfleischbelag" + i).value = "Newbeef";
                         preis = preis + 2;
@@ -574,17 +582,17 @@ var plus = function(name, klasse){
                     
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/chicken.png";
                         document.getElementById("inputfleischbelag" + i).value = "Chicken";
                         preis = preis + 2;
@@ -596,17 +604,17 @@ var plus = function(name, klasse){
             case "veggie": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }
                 
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/leer.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/veggie.png";
                         document.getElementById("inputfleischbelag" + i).value = "Veggie";
                         preis = preis + 2;
@@ -618,17 +626,17 @@ var plus = function(name, klasse){
             case "cheese": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }    
                  
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/cheese.png";
                         document.getElementById("inputkaesebelag" + i).value = "Cheese";
                         preis = preis + 0.5;
@@ -640,17 +648,17 @@ var plus = function(name, klasse){
             case "cheddar": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }     
                     
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/cheddar.png";
                         document.getElementById("inputkaesebelag" + i).value = "Cheddar";
                         preis = preis + 0.5;
@@ -662,17 +670,17 @@ var plus = function(name, klasse){
             case "emmentaler": {
                 var zaehlen2 = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         zaehlen2 = zaehlen2 + 1;
                     }
                 }
-                if (zaehlen2 == 0){
+                if (zaehlen2 === 0){
                     document.getElementsByName(name)[0].style.borderColor = 'white';
                     document.getElementsByName(klasse)[0].checked = true;
                 }     
                     
                 for (var i = 1; i <= 3; i++){  
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/leer.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/emmentaler.png";
                         document.getElementById("inputkaesebelag" + i).value = "Emmentaler";
                         preis = preis + 0.5;
@@ -684,7 +692,7 @@ var plus = function(name, klasse){
         }
     }
     else {
-        if (klasse == "fleisch1"){
+        if (klasse === "fleisch1"){
             alert("Du darft maximal 3 Stueck Fleisch auswaehlen!");
         }
         else {
@@ -692,32 +700,40 @@ var plus = function(name, klasse){
         }
     }
     document.getElementById("preis").value = preis;
-    document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €'
+    document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €';
 };
+
+/* 
+ * 
+ * Durch Klicken auf einen Minus-Button unter den Fleisch/Kaese Bildern der Home.jsp wird der aktuelle Burger aktualisiert
+ * @param {String} name - Name des html-Elements
+ * @param {String} klasse - Klasse des html-Elements
+ * 
+ */
 
 var minus = function(name, klasse){
     
     var preis = parseFloat(document.getElementById("preis").value);
     
-    if (klasse == "fleisch1") {
+    if (klasse === "fleisch1") {
         switch (name){
             case "newbeef": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/newbeef.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         preis = preis - 2;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[0].checked = false;
                 }
@@ -726,19 +742,19 @@ var minus = function(name, klasse){
             case "chicken": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/chicken.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         preis = preis - 2;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[1].checked = false;
                 }
@@ -747,19 +763,19 @@ var minus = function(name, klasse){
             case "veggie": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("fleischbelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
+                    if (document.getElementById("fleischbelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Fleisch/veggie.png"){
                         document.getElementById("fleischbelag" + i).src = "img/Fleisch/leer.png";
                         document.getElementById("inputfleischbelag" + i).value = "Leer";
                         preis = preis - 2;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[2].checked = false;
                 }
@@ -767,25 +783,25 @@ var minus = function(name, klasse){
             }
         }    
     }
-    if (klasse == "kaese1") {
+    if (klasse === "kaese1") {
         switch (name){
             case "cheese": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheese.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         preis = preis - 0.5;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[0].checked = false;
                 }
@@ -794,20 +810,20 @@ var minus = function(name, klasse){
             case "cheddar": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/cheddar.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         preis = preis - 0.5;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[1].checked = false;
                 }
@@ -816,20 +832,20 @@ var minus = function(name, klasse){
             case "emmentaler": {
                 var zaehlen = 0;
                 for (var i=1; i<=3; i++) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         zaehlen = zaehlen + 1;
                     }
                 }
                 
                 for (var i=3; i >= 1; i--) {                                
-                    if (document.getElementById("kaesebelag" + i).src == "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
+                    if (document.getElementById("kaesebelag" + i).src === "http://localhost:8080/BCBurger2-war/img/Kaese/emmentaler.png"){
                         document.getElementById("kaesebelag" + i).src = "img/Kaese/leer.png";
                         document.getElementById("inputkaesebelag" + i).value = "Leer";
                         preis = preis - 0.5;
                         break;
                     }
                 }
-                if (zaehlen == 1) {
+                if (zaehlen === 1) {
                     document.getElementsByName(name)[0].style.borderColor = 'transparent';
                     document.getElementsByName(klasse)[2].checked = false;
                 }
@@ -839,7 +855,7 @@ var minus = function(name, klasse){
     }
     
     document.getElementById("preis").value = preis;
-    document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €'
+    document.getElementById("burgerpreis").innerHTML = 'Preis: '+preis+' €';
 };
 
 
